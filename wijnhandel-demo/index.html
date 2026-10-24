@@ -1,0 +1,1159 @@
+<title>Clos &amp; Kelder</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: wijnetiket — gecentreerde masthead, haarlijnen in goud, flessen op een rek als portretkaarten */
+:root{
+  --ink:#120D10;
+  --ink-2:#1A1216;
+  --ink-3:#231920;
+  --cream:#F2EBE2;
+  --cream-2:#C6B8B1;
+  --muted:#8C7D7A;
+  --claret:#9B2C3F;
+  --claret-soft:#C4596B;
+  --gold:#C8A24A;
+  --line:rgba(242,235,226,.15);
+  --line-strong:rgba(242,235,226,.3);
+  --font-display:'Bodoni Moda',Georgia,'Times New Roman',serif;
+  --font-body:'Karla','Helvetica Neue',Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--ink)}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+a{color:inherit}
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{width:100%}
+.label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.label-q{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.lead{font-size:1.08rem;color:var(--cream-2);max-width:54ch}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.shot{width:100%;height:100%;object-fit:cover;display:block}
+.num{font-variant-numeric:tabular-nums}
+
+/* knoppen */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:inherit;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid transparent;padding:.85rem 1.5rem;cursor:pointer;text-decoration:none;transition:background .18s,color .18s,border-color .18s}
+.btn-fill{background:var(--claret);color:#FDF8F3;border-color:var(--claret)}
+.btn-fill:hover{background:#7E2233;border-color:#7E2233}
+.btn-line{background:transparent;color:var(--cream);border-color:var(--line-strong)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn-sm{padding:.6rem 1rem;font-size:.7rem;letter-spacing:.12em}
+
+/* demo-balk */
+.demo{background:var(--gold);color:#1A1208}
+.demo .wrap{display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap;padding-block:.5rem;font-size:.8rem}
+.demo b{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.68rem}
+
+/* topbalk */
+.topbar{background:var(--ink-2);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.5rem;font-size:.76rem;color:var(--cream-2);flex-wrap:wrap}
+.topbar a{text-decoration:none}
+.topbar a:hover{color:var(--gold)}
+.topbar-right{display:flex;align-items:center;gap:1.2rem}
+.lang{position:relative}
+.lang-btn{background:none;border:0;color:inherit;font:inherit;font-size:.76rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;letter-spacing:.1em;text-transform:uppercase}
+.lang-btn:hover{color:var(--gold)}
+.lang-menu{position:absolute;right:0;top:calc(100% + .5rem);background:var(--ink-3);border:1px solid var(--line);min-width:11rem;padding:.3rem;z-index:35;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.lang-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--cream);padding:.45rem .6rem;font-size:.85rem;cursor:pointer}
+.lang-menu button:hover{background:rgba(242,235,226,.07)}
+.lang-menu button[aria-current="true"]{color:var(--gold)}
+.lang-menu .hint{border-top:1px solid var(--line);margin-top:.3rem;padding:.45rem .6rem .25rem;font-size:.7rem;color:var(--muted)}
+
+/* masthead */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--ink);border-bottom:1px solid var(--line)}
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding-block:1.1rem}
+.mast-left,.mast-right{display:flex;align-items:center;gap:.9rem}
+.mast-right{justify-content:flex-end}
+.brand{text-align:center;text-decoration:none;display:grid;gap:.3rem;justify-items:center}
+.brand .name{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:.06em;line-height:1}
+.brand .name .amp{color:var(--gold);font-style:italic}
+.brand .sub{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.icon-btn{background:none;border:0;color:var(--cream-2);cursor:pointer;padding:.3rem;display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.76rem}
+.icon-btn:hover{color:var(--gold)}
+.cart-count{background:var(--claret);color:#FDF8F3;border-radius:999px;font-size:.66rem;font-weight:700;min-width:1.2rem;height:1.2rem;display:grid;place-items:center;padding:0 .3rem}
+.searchbar{border-top:1px solid var(--line);display:none}
+.searchbar.open{display:block}
+.searchbar .wrap{display:flex;align-items:center;gap:.6rem;padding-block:.7rem}
+.searchbar input{flex:1 1 auto;min-width:0;background:none;border:0;color:var(--cream);font:inherit;font-size:1rem}
+.searchbar input::placeholder{color:var(--muted)}
+.searchbar input:focus{outline:none}
+
+/* navigatie */
+.nav{border-top:1px solid var(--line);position:relative}
+.nav-row{display:flex;justify-content:center;gap:.2rem;overflow-x:auto;scrollbar-width:thin}
+.nav-row > *{flex:0 0 auto}
+.nav-link{background:none;border:0;color:var(--cream);font:inherit;font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;padding:.85rem .9rem;cursor:pointer;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:.35rem;border-bottom:1px solid transparent}
+.nav-link:hover,.nav-link[aria-expanded="true"]{color:var(--gold);border-bottom-color:var(--gold)}
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);z-index:28;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.mega .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.4rem 2rem;padding-block:1.6rem}
+.mega h4{font-family:var(--font-body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 .7rem}
+.mega ul{list-style:none;margin:0;padding:0;display:grid;gap:.42rem}
+.mega a{font-size:.92rem;text-decoration:none;color:var(--cream-2)}
+.mega a:hover{color:var(--cream)}
+.mega-note{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1rem;font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.mobile-nav{display:none;border-top:1px solid var(--line)}
+.mobile-nav ul{list-style:none;margin:0;padding:.4rem 0;display:grid}
+.mobile-nav a{display:block;padding:.65rem max(16px,env(safe-area-inset-left,0px));text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.mobile-nav a:hover{background:var(--ink-2);color:var(--gold)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--ink-2);border-bottom:1px solid var(--line)}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.46}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,13,16,.55),rgba(18,13,16,.82))}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(3.4rem,9vw,6rem);display:grid;gap:1.4rem;justify-items:center;text-align:center}
+.hero h1{max-width:16ch}
+.hero .lead{text-align:center;color:var(--cream-2)}
+.hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+.hero-facts{display:flex;gap:2.2rem;flex-wrap:wrap;justify-content:center;border-top:1px solid var(--line-strong);padding-top:1.3rem;margin-top:.6rem}
+.hero-facts div{display:grid;gap:.1rem;text-align:center}
+.hero-facts b{font-family:var(--font-display);font-size:1.6rem;font-weight:500}
+.hero-facts span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* usp */
+.usp{border-bottom:1px solid var(--line);background:var(--ink-2)}
+.usp .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-block:0}
+.usp div{display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.8rem;letter-spacing:.06em;padding:1.05rem .8rem;color:var(--cream-2);min-width:0;text-align:center}
+.usp div + div{border-left:1px solid var(--line)}
+.usp svg{flex:0 0 auto;color:var(--gold)}
+
+/* secties */
+section{padding-block:clamp(2.8rem,6vw,4.6rem)}
+.sec-head{display:grid;gap:.6rem;justify-items:center;text-align:center;margin-bottom:2rem}
+.sec-head p{color:var(--cream-2);font-size:.98rem;max-width:56ch}
+
+/* filters */
+.filters{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
+.filters button{background:none;border:1px solid var(--line);color:var(--cream-2);font:inherit;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer}
+.filters button:hover{border-color:var(--gold);color:var(--gold)}
+.filters button[aria-pressed="true"]{background:var(--cream);border-color:var(--cream);color:var(--ink)}
+
+/* wijnkaarten */
+.wines{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem 1.8rem}
+.wine{display:flex;flex-direction:column;min-width:0}
+.wine .pic{aspect-ratio:4/5;overflow:hidden;background:var(--ink-3);position:relative}
+.wine .pic img{transition:transform .5s ease}
+.wine:hover .pic img{transform:scale(1.04)}
+.wine .tag{position:absolute;left:0;top:0;background:var(--ink);color:var(--gold);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.3rem .6rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wine .body{padding-top:1rem;display:grid;gap:.35rem;flex:1 1 auto}
+.wine .appell{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.wine .dom{font-family:var(--font-display);font-size:1.22rem;line-height:1.2}
+.wine .cuvee{font-family:var(--font-display);font-style:italic;font-size:1rem;color:var(--cream-2)}
+.wine .meta{font-size:.78rem;color:var(--muted);letter-spacing:.03em}
+.wine .note{font-size:.88rem;color:var(--cream-2);border-top:1px solid var(--line);padding-top:.6rem;margin-top:.25rem}
+.wine .foot{margin-top:auto;padding-top:.9rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.wine .price{font-family:var(--font-display);font-size:1.35rem;color:var(--cream);font-variant-numeric:tabular-nums}
+.wine .vat{font-size:.68rem;color:var(--muted);display:block;letter-spacing:.06em}
+.empty{border:1px dashed var(--line);padding:2.4rem;text-align:center;color:var(--muted);font-size:.92rem}
+
+/* spijs en wijn */
+.pairing{background:var(--ink-2);border-block:1px solid var(--line)}
+.pairing .wrap{padding-block:clamp(2.6rem,5vw,4rem);display:grid;gap:1.6rem;justify-items:center;text-align:center}
+.dishes{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center}
+.dishes button{background:none;border:1px solid var(--line);color:var(--cream-2);font:inherit;font-size:.76rem;padding:.55rem 1.1rem;cursor:pointer;letter-spacing:.06em}
+.dishes button:hover{border-color:var(--gold);color:var(--gold)}
+.dishes button[aria-pressed="true"]{background:var(--claret);border-color:var(--claret);color:#FDF8F3}
+.pair-out{border:1px solid var(--line);background:var(--ink);padding:clamp(1.3rem,3vw,2rem);max-width:46rem;width:100%;display:grid;gap:.5rem;min-height:9.5rem;align-content:center}
+.pair-out .w{font-family:var(--font-display);font-size:1.5rem}
+.pair-out .why{color:var(--cream-2);font-size:.95rem}
+.pair-out .app{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+/* domein in de kijker */
+.domein{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border:1px solid var(--line)}
+.domein .pic{min-height:320px;overflow:hidden;background:var(--ink-3)}
+.domein .copy{padding:clamp(1.6rem,4vw,3rem);display:grid;gap:1rem;align-content:center}
+.domein .copy p{color:var(--cream-2);font-size:.97rem}
+.domein .facts{display:grid;gap:.45rem;border-top:1px solid var(--line);padding-top:1rem;font-size:.86rem}
+.domein .facts div{display:flex;justify-content:space-between;gap:1rem;color:var(--cream-2)}
+.domein .facts span:first-child{color:var(--muted)}
+
+/* proeverijen */
+.tast-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.tast-pic{margin:0;overflow:hidden;background:var(--ink-3);aspect-ratio:3/2;border:1px solid var(--line)}
+.tastings{display:grid;gap:0;border-top:1px solid var(--line)}
+.tasting{display:grid;grid-template-columns:auto 1fr auto auto;gap:1.4rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.tasting .date{font-family:var(--font-display);font-size:1.05rem;min-width:11rem;color:var(--cream)}
+.tasting .what{display:grid;gap:.15rem;min-width:0}
+.tasting .what strong{font-family:var(--font-display);font-size:1.15rem;font-weight:500}
+.tasting .what span{font-size:.84rem;color:var(--muted)}
+.tasting .seats{font-size:.78rem;color:var(--cream-2);white-space:nowrap}
+.tasting .seats.few{color:var(--claret-soft)}
+
+/* cadeau */
+.gift{display:grid;grid-template-columns:.8fr 1.2fr;border:1px solid var(--line);background:var(--ink-2)}
+.gift .pic{overflow:hidden;background:var(--ink-3);min-height:260px}
+.gift .copy{padding:clamp(1.6rem,4vw,2.6rem);display:grid;gap:1rem;align-content:center}
+.gift .copy p{color:var(--cream-2);font-size:.97rem}
+.gift .opts{display:flex;gap:.5rem;flex-wrap:wrap}
+.gift .opts button{background:none;border:1px solid var(--line);color:var(--cream);font:inherit;font-family:var(--font-display);font-size:1.1rem;padding:.5rem 1rem;cursor:pointer}
+.gift .opts button:hover{border-color:var(--gold);color:var(--gold)}
+.gift .opts button[aria-pressed="true"]{background:var(--cream);border-color:var(--cream);color:var(--ink)}
+
+/* bandfoto */
+.strip{height:clamp(180px,26vw,320px);overflow:hidden;border-block:1px solid var(--line);position:relative}
+.strip img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.5rem max(16px,env(safe-area-inset-left,0px)) .7rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-2);background:linear-gradient(to top,rgba(18,13,16,.85),rgba(18,13,16,0))}
+
+/* over ons + contact */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+.about .copy{display:grid;gap:1.1rem;justify-items:start;min-width:0}
+.about .copy p{color:var(--cream-2)}
+.pull{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--cream);border-left:2px solid var(--gold);padding-left:1.1rem}
+.panel{border:1px solid var(--line);background:var(--ink-2);padding:1.5rem;display:grid;gap:1rem}
+.panel h3{font-size:1.1rem}
+.panel .rows{display:grid;gap:.6rem;font-size:.9rem}
+.panel .rows div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--line);padding-bottom:.5rem;color:var(--cream-2)}
+.panel .rows div:last-child{border-bottom:0;padding-bottom:0}
+.panel .rows b{font-weight:600;color:var(--cream)}
+.contact-lines{display:grid;gap:.55rem;font-size:.95rem;color:var(--cream-2)}
+.contact-lines > div{display:flex;gap:.6rem;align-items:flex-start}
+.contact-lines svg{flex:0 0 auto;color:var(--gold);margin-top:.2rem}
+.copyline{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+form{display:grid;gap:.8rem}
+label{display:grid;gap:.3rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=email]{background:var(--ink);border:1px solid var(--line);color:var(--cream);font:inherit;font-size:.95rem;padding:.65rem .75rem}
+input:focus{outline:none;border-color:var(--gold)}
+.ok{border:1px solid var(--gold);color:var(--gold);padding:.7rem .8rem;font-size:.88rem}
+.fineprint{font-size:.74rem;color:var(--muted)}
+
+/* footer */
+footer{background:var(--ink-2);border-top:1px solid var(--line)}
+footer .wrap{padding-block:2.6rem}
+.fcols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:1.8rem 2rem}
+footer h4{font-family:var(--font-body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 .8rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+footer a{text-decoration:none;font-size:.88rem;color:var(--cream-2)}
+footer a:hover{color:var(--cream)}
+footer .fbrand .name{font-family:var(--font-display);font-size:1.4rem;letter-spacing:.06em}
+footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:30ch}
+.pay{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
+.pay span{border:1px solid var(--line);padding:.24rem .5rem;font-size:.66rem;letter-spacing:.08em;color:var(--cream-2)}
+.age{margin-top:1.6rem;border:1px solid var(--line);padding:.8rem 1rem;font-size:.78rem;color:var(--cream-2);display:flex;gap:.7rem;align-items:center}
+.age b{color:var(--gold);font-family:var(--font-display);font-size:1.1rem}
+.credits{margin-top:1.4rem;font-size:.76rem;color:var(--muted)}
+.credits summary{cursor:pointer;color:var(--cream-2);letter-spacing:.06em}
+.credits ul{margin-top:.6rem;gap:.22rem}
+.credits li{font-size:.74rem;color:var(--muted)}
+.fbot{border-top:1px solid var(--line);margin-top:1.6rem;padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.76rem;color:var(--muted)}
+.fbot a{font-size:.76rem;color:var(--muted)}
+
+/* melding */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));background:var(--cream);color:var(--ink);padding:.75rem 1.1rem;font-size:.86rem;font-weight:500;z-index:50;max-width:min(92vw,30rem);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+
+/* responsive */
+@media (max-width:980px){
+  .wines{grid-template-columns:repeat(2,1fr)}
+  .domein,.gift{grid-template-columns:1fr}
+  .domein .pic,.gift .pic{aspect-ratio:2/1;min-height:0}
+  .about,.tast-grid{grid-template-columns:1fr}
+  .fcols{grid-template-columns:1fr 1fr}
+  .tasting{grid-template-columns:1fr auto;gap:.6rem 1rem}
+  .tasting .date{min-width:0;grid-column:1/-1;color:var(--gold);font-size:.95rem}
+}
+@media (max-width:760px){
+  .nav-row{display:none}
+  .usp .wrap{grid-template-columns:1fr}
+  .usp div + div{border-left:0;border-top:1px solid var(--line)}
+  .masthead{grid-template-columns:auto 1fr auto}
+  .brand{justify-items:center}
+}
+@media (max-width:560px){
+  .wines{grid-template-columns:1fr;gap:2rem}
+  .fcols{grid-template-columns:1fr}
+  .hero-facts{gap:1.4rem}
+  .mast-left .lbl,.mast-right .lbl{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<!-- demo-balk -->
+<div class="band demo">
+  <div class="wrap">
+    <b data-i18n="demo.b">Voorbeeldontwerp</b>
+    <span data-i18n="demo.t">Verzonnen wijnhandel met verzonnen domeinen en prijzen. De foto's zijn vrije-licentiefoto's; hier komen eigen flesfoto's.</span>
+  </div>
+</div>
+
+<!-- topbalk -->
+<div class="band topbar">
+  <div class="wrap">
+    <span data-i18n="top.ship">Gratis levering vanaf &euro; 150 &middot; in heel Belgi&euml;</span>
+    <div class="topbar-right">
+      <div class="lang">
+        <button class="lang-btn" id="lang-btn" aria-expanded="false" aria-haspopup="true">
+          <span id="lang-label">NL</span>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg>
+        </button>
+        <div class="lang-menu" id="lang-menu" hidden>
+          <button type="button" data-lang="nl" aria-current="true">Nederlands</button>
+          <button type="button" data-lang="fr" aria-current="false">Fran&ccedil;ais</button>
+          <p class="hint" data-i18n="lang.hint">Meer talen in de echte website</p>
+        </div>
+      </div>
+      <a href="#contact" data-i18n="top.account">Mijn account</a>
+    </div>
+  </div>
+</div>
+
+<!-- masthead -->
+<header class="site">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="mast-left">
+        <button class="icon-btn" id="search-btn" aria-expanded="false" aria-controls="searchbar">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+          <span class="lbl" data-i18n="ui.search">Zoeken</span>
+        </button>
+      </div>
+      <a class="brand" href="#top">
+        <span class="name">Clos <span class="amp">&amp;</span> Kelder</span>
+        <span class="sub" data-i18n="brand.sub">Wijnhandel &middot; Gent</span>
+      </a>
+      <div class="mast-right">
+        <button class="icon-btn" id="burger" aria-expanded="false" aria-controls="mobile-nav" style="display:none">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <button class="icon-btn" id="cart-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h14l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8Z"/><path d="M8.5 7V5.5a2.5 2.5 0 0 1 5 0V7"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+          <span class="lbl num" id="cart-total">&euro;&nbsp;0,00</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar">
+    <div class="wrap">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="color:var(--gold)"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <label class="sr" for="q" data-i18n="ui.searchLabel">Zoek een wijn</label>
+      <input type="text" id="q" data-i18n-ph="ui.searchPh" placeholder="Zoek op domein, appellatie of druif" autocomplete="off">
+      <button class="btn btn-line btn-sm" id="q-clear" data-i18n="ui.clear">Wissen</button>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="wrap">
+      <div class="nav-row">
+        <button class="nav-link" data-mega="wijn" aria-expanded="false"><span data-i18n="nav.wines">Wijnen</span>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg>
+        </button>
+        <a class="nav-link" href="#domein" data-i18n="nav.domains">Domeinen</a>
+        <a class="nav-link" href="#kelder" data-i18n="nav.natural">Natuurwijn</a>
+        <a class="nav-link" href="#proeverijen" data-i18n="nav.tastings">Proeverijen</a>
+        <a class="nav-link" href="#cadeau" data-i18n="nav.gift">Cadeaubon</a>
+        <a class="nav-link" href="#verhaal" data-i18n="nav.story">Ons verhaal</a>
+        <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="mega" id="mega-wijn" hidden>
+      <div class="wrap">
+        <div><h4 data-i18n="mg.colour">Op kleur</h4><ul>
+          <li><a href="#kelder" data-i18n="c.red">Rood</a></li>
+          <li><a href="#kelder" data-i18n="c.white">Wit</a></li>
+          <li><a href="#kelder" data-i18n="c.rose">Ros&eacute;</a></li>
+          <li><a href="#kelder" data-i18n="c.bubbles">Bubbels</a></li>
+          <li><a href="#kelder" data-i18n="c.orange">Oranjewijn</a></li>
+        </ul></div>
+        <div><h4 data-i18n="mg.region">Op streek</h4><ul>
+          <li><a href="#kelder">Rh&ocirc;ne</a></li><li><a href="#kelder">Bourgogne</a></li><li><a href="#kelder">Loire</a></li><li><a href="#kelder">Rioja</a></li><li><a href="#kelder">Toscane</a></li>
+        </ul></div>
+        <div><h4 data-i18n="mg.style">Op stijl</h4><ul>
+          <li><a href="#kelder" data-i18n="s.natural">Natuurwijn</a></li>
+          <li><a href="#kelder" data-i18n="s.bio">Biologisch</a></li>
+          <li><a href="#kelder" data-i18n="s.nolow">Alcoholvrij</a></li>
+          <li><a href="#kelder" data-i18n="s.keep">Om weg te leggen</a></li>
+        </ul></div>
+        <div><h4 data-i18n="mg.budget">Op budget</h4><ul>
+          <li><a href="#kelder" data-i18n="b.1">Tot &euro; 15</a></li>
+          <li><a href="#kelder" data-i18n="b.2">&euro; 15 tot &euro; 25</a></li>
+          <li><a href="#kelder" data-i18n="b.3">&euro; 25 tot &euro; 50</a></li>
+          <li><a href="#kelder" data-i18n="b.4">Boven &euro; 50</a></li>
+        </ul></div>
+        <div class="mega-note"><span data-i18n="mg.note">310 wijnen van 42 domeinen &middot; prijzen incl. btw</span><a href="#kelder" data-i18n="mg.link">Naar de kelder &rarr;</a></div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <ul>
+      <li><a href="#kelder" data-i18n="nav.wines2">Wijnen</a></li>
+      <li><a href="#domein" data-i18n="nav.domains2">Domeinen</a></li>
+      <li><a href="#proeverijen" data-i18n="nav.tastings2">Proeverijen</a></li>
+      <li><a href="#cadeau" data-i18n="nav.gift2">Cadeaubon</a></li>
+      <li><a href="#verhaal" data-i18n="nav.story2">Ons verhaal</a></li>
+      <li><a href="#contact" data-i18n="nav.contact2">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- hero -->
+<div class="band hero" id="top">
+  <img src="img/hero-kelder.jpg" width="1600" height="900" alt="Gewelfde wijnkelder met liggende vaten" fetchpriority="high" decoding="async">
+  <div class="wrap">
+    <span class="label" data-i18n="hero.eyebrow">Wijnhandel in Gent &middot; sinds 1974</span>
+    <h1 data-i18n="hero.h1">Wijn met een adres</h1>
+    <p class="lead" data-i18n="hero.lead">Wij kopen rechtstreeks bij tweeënveertig families die hun eigen wijn maken. Geen tussenhandel: bij elke fles hoort een naam, een perceel en een jaartal.</p>
+    <div class="hero-cta">
+      <a class="btn btn-fill" href="#kelder" data-i18n="hero.cta1">Ontdek de kelder</a>
+      <a class="btn btn-line" href="#proeverijen" data-i18n="hero.cta2">Boek een proeverij</a>
+    </div>
+    <div class="hero-facts">
+      <div><b class="num">42</b><span data-i18n="hero.f1">domeinen</span></div>
+      <div><b class="num">310</b><span data-i18n="hero.f2">wijnen op voorraad</span></div>
+      <div><b class="num">1974</b><span data-i18n="hero.f3">eigen kelder</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- usp -->
+<div class="band usp">
+  <div class="wrap">
+    <div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5c0 3-2 4-2 7H9c0-3-2-4-2-7a5 5 0 0 1 5-5Z"/><path d="M9.5 19h5"/></svg>
+      <span data-i18n="usp.1">Persoonlijk advies in de winkel</span>
+    </div>
+    <div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg>
+      <span data-i18n="usp.2">Gratis levering vanaf &euro; 150</span>
+    </div>
+    <div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0Z"/><path d="M12 14v7M8.5 21h7"/></svg>
+      <span data-i18n="usp.3">Proeverij elke laatste vrijdag</span>
+    </div>
+  </div>
+</div>
+
+<!-- de kelder -->
+<section class="wrap" id="kelder">
+  <div class="sec-head">
+    <span class="label" data-i18n="kelder.label">De kelder</span>
+    <h2 data-i18n="kelder.h2">Zesendertig flessen die we zelf drinken</h2>
+    <p data-i18n="kelder.p">Een selectie uit het vaste assortiment. Elke fles is geproefd voor hij in de rekken ligt; het proefnotitie­blad schrijven we zelf.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter op kleur">
+    <button type="button" data-filter="alles" aria-pressed="true" data-i18n="f.all">Alles</button>
+    <button type="button" data-filter="rood" aria-pressed="false" data-i18n="f.red">Rood</button>
+    <button type="button" data-filter="wit" aria-pressed="false" data-i18n="f.white">Wit</button>
+    <button type="button" data-filter="rose" aria-pressed="false" data-i18n="f.rose">Ros&eacute;</button>
+    <button type="button" data-filter="bubbels" aria-pressed="false" data-i18n="f.bubbles">Bubbels</button>
+    <button type="button" data-filter="natuur" aria-pressed="false" data-i18n="f.natural">Natuurwijn</button>
+  </div>
+
+  <div class="wines" id="wines">
+    <article class="wine" data-kleur="rood" data-search="hauts verniers les galets cotes du rhone grenache syrah rood 2021">
+      <div class="pic">
+        <span class="tag" data-i18n="tag.top">Huisfavoriet</span>
+        <img class="shot" src="img/wijn-rood.jpg" width="480" height="600" alt="Glas rode wijn" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">C&ocirc;tes du Rh&ocirc;ne AOC</span>
+        <span class="dom">Domaine des Hauts Verniers</span>
+        <span class="cuvee">&lsquo;Les Galets&rsquo; 2021</span>
+        <span class="meta">Grenache &middot; Syrah &middot; 14%</span>
+        <p class="note" data-i18n="w1.note">Rijpe kers en zwarte peper, zachte tannine. Drinkklaar, of nog drie jaar te bewaren.</p>
+        <div class="foot">
+          <span class="price num">&euro; 14,50<span class="vat" data-i18n="vat">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Hauts Verniers 'Les Galets' 2021" data-euro="14.50" data-i18n="btn.add1">In mandje</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="wine" data-kleur="wit" data-search="clos de la perdrix vieilles vignes chablis chardonnay wit 2022">
+      <div class="pic">
+        <img class="shot" src="img/wijn-wit.jpg" width="480" height="600" alt="Glas witte wijn" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">Chablis AOC</span>
+        <span class="dom">Clos de la Perdrix</span>
+        <span class="cuvee">&lsquo;Vieilles Vignes&rsquo; 2022</span>
+        <span class="meta">Chardonnay &middot; 12,5%</span>
+        <p class="note" data-i18n="w2.note">Vuursteen en groene appel, strakke zuren. Wijngaard van zestig jaar oud op kimmeridgien.</p>
+        <div class="foot">
+          <span class="price num">&euro; 23,00<span class="vat" data-i18n="vat2">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Clos de la Perdrix 'Vieilles Vignes' 2022" data-euro="23.00" data-i18n="btn.add2">In mandje</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="wine" data-kleur="rose" data-search="domaine lanterne rose de saignee cotes de provence cinsault rose 2023">
+      <div class="pic">
+        <img class="shot" src="img/wijn-rose.jpg" width="480" height="600" alt="Glas ros&eacute;wijn" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">C&ocirc;tes de Provence AOC</span>
+        <span class="dom">Domaine Lanterne</span>
+        <span class="cuvee">&lsquo;Ros&eacute; de Saign&eacute;e&rsquo; 2023</span>
+        <span class="meta">Cinsault &middot; Grenache &middot; 12,5%</span>
+        <p class="note" data-i18n="w3.note">Aardbei en perzik, kurkdroge afdronk. Geen zomerwijn die zich wegdrinkt zonder iets te zeggen.</p>
+        <div class="foot">
+          <span class="price num">&euro; 13,80<span class="vat" data-i18n="vat3">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Domaine Lanterne 'Rose de Saignee' 2023" data-euro="13.80" data-i18n="btn.add3">In mandje</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="wine" data-kleur="bubbels" data-search="maison bardet cremant de loire brut nature chenin blanc bubbels">
+      <div class="pic">
+        <span class="tag" data-i18n="tag.new">Nieuw</span>
+        <img class="shot" src="img/wijn-bubbels.jpg" width="480" height="600" alt="Glas schuimwijn" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">Cr&eacute;mant de Loire AOC</span>
+        <span class="dom">Maison Bardet</span>
+        <span class="cuvee">&lsquo;Brut Nature&rsquo;</span>
+        <span class="meta">Chenin blanc &middot; 12% &middot; <span data-i18n="w4.dos">zonder dosage</span></span>
+        <p class="note" data-i18n="w4.note">Fijne bubbel, peer en brioche. Achttien maanden op fles; droger dan de meeste champagnes.</p>
+        <div class="foot">
+          <span class="price num">&euro; 18,90<span class="vat" data-i18n="vat4">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Maison Bardet 'Brut Nature'" data-euro="18.90" data-i18n="btn.add4">In mandje</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="wine" data-kleur="rood" data-search="bodega valtorre tinto crianza rioja tempranillo rood 2020">
+      <div class="pic">
+        <img class="shot" src="img/wijn-rood2.jpg" width="480" height="600" alt="Rode wijn wordt in een glas geschonken" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">Rioja DOCa</span>
+        <span class="dom">Bodega Valtorre</span>
+        <span class="cuvee">&lsquo;Tinto Crianza&rsquo; 2020</span>
+        <span class="meta">Tempranillo &middot; 14%</span>
+        <p class="note" data-i18n="w5.note">Pruim en vanille, twaalf maanden Amerikaans eik. De fles voor een trage zondagstoof.</p>
+        <div class="foot">
+          <span class="price num">&euro; 16,40<span class="vat" data-i18n="vat5">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Bodega Valtorre 'Tinto Crianza' 2020" data-euro="16.40" data-i18n="btn.add5">In mandje</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="wine" data-kleur="natuur" data-search="tenuta san fiore ambra toscana trebbiano oranjewijn natuurwijn 2022">
+      <div class="pic">
+        <span class="tag" data-i18n="tag.natural">Natuurwijn</span>
+        <img class="shot" src="img/wijn-oranje.jpg" width="480" height="600" alt="Glas oranjewijn in een proeflokaal" loading="lazy" decoding="async">
+      </div>
+      <div class="body">
+        <span class="appell">Toscana IGT</span>
+        <span class="dom">Tenuta San Fiore</span>
+        <span class="cuvee">&lsquo;Ambra&rsquo; 2022</span>
+        <span class="meta">Trebbiano &middot; 13% &middot; <span data-i18n="w6.skin">30 dagen schilweking</span></span>
+        <p class="note" data-i18n="w6.note">Sinaasappelschil en zwarte thee, licht tannisch. Ongefilterd, met een handvol sulfiet.</p>
+        <div class="foot">
+          <span class="price num">&euro; 21,50<span class="vat" data-i18n="vat6">incl. btw</span></span>
+          <button class="btn btn-line btn-sm add" data-name="Tenuta San Fiore 'Ambra' 2022" data-euro="21.50" data-i18n="btn.add6">In mandje</button>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="empty" id="wines-empty" hidden data-i18n="kelder.empty">Geen wijn gevonden. In de echte webshop staan hier alle 310 flessen.</p>
+  <p class="fineprint" style="margin-top:1.6rem;text-align:center" data-i18n="kelder.six">Per zes flessen, gemengd mag ook: 5% korting. Vanaf twaalf flessen leveren we gratis in Gent.</p>
+</section>
+
+<!-- spijs en wijn -->
+<div class="band pairing" id="pairing">
+  <div class="wrap">
+    <span class="label" data-i18n="pair.label">Spijs en wijn</span>
+    <h2 data-i18n="pair.h2">Wat schenk je erbij?</h2>
+    <p class="lead" style="text-align:center" data-i18n="pair.p">Kies wat er op tafel komt, dan zoeken wij de fles. In de winkel doen we precies hetzelfde, maar dan met meer vragen.</p>
+    <div class="dishes" role="group" aria-label="Kies een gerecht">
+      <button type="button" data-dish="vis" aria-pressed="true" data-i18n="d.fish">Vis en schaaldieren</button>
+      <button type="button" data-dish="vlees" aria-pressed="false" data-i18n="d.meat">Gegrild vlees</button>
+      <button type="button" data-dish="kaas" aria-pressed="false" data-i18n="d.cheese">Kaasplank</button>
+      <button type="button" data-dish="aperitief" aria-pressed="false" data-i18n="d.ap">Aperitief</button>
+      <button type="button" data-dish="groenten" aria-pressed="false" data-i18n="d.veg">Vegetarisch</button>
+    </div>
+    <div class="pair-out" id="pair-out" role="status"></div>
+  </div>
+</div>
+
+<!-- domein in de kijker -->
+<section class="wrap" id="domein">
+  <div class="sec-head">
+    <span class="label" data-i18n="dom.label">Domein in de kijker</span>
+    <h2 data-i18n="dom.h2">Domaine des Hauts Verniers</h2>
+  </div>
+  <div class="domein">
+    <div class="pic"><img class="shot" src="img/domein.jpg" width="1000" height="700" alt="Wijnboer plukt druiven tussen de rijen" loading="lazy" decoding="async"></div>
+    <div class="copy">
+      <p data-i18n="dom.p1">Marthe en Olivier bewerken elf hectare op de keienbodem boven S&eacute;guret. Ze ploegen met een paard omdat de tractor de terrassen kapot reed, en ze oogsten met de hand in twee doorgangen.</p>
+      <p data-i18n="dom.p2">Wij kopen hier sinds 1998. Elk jaar gaan we in maart langs om te proeven uit het vat; wat we kiezen, kopen we meteen in zijn geheel.</p>
+      <div class="facts">
+        <div><span data-i18n="dom.f1">Streek</span><span>S&eacute;guret, Vaucluse</span></div>
+        <div><span data-i18n="dom.f2">Oppervlakte</span><span class="num">11 ha</span></div>
+        <div><span data-i18n="dom.f3">Bewerking</span><span data-i18n="dom.f3v">Biologisch, geploegd met paard</span></div>
+        <div><span data-i18n="dom.f4">Bij ons sinds</span><span class="num">1998</span></div>
+      </div>
+      <a class="btn btn-line" href="#kelder" data-i18n="dom.btn">De wijnen van dit domein</a>
+    </div>
+  </div>
+</section>
+
+<figure class="strip">
+  <img src="img/kelderrek.jpg" width="1600" height="620" alt="Wand met liggende wijnflessen" loading="lazy" decoding="async">
+  <figcaption data-i18n="strip.cap">Onze kelder onder de Sleepstraat &middot; voorbeeldfoto</figcaption>
+</figure>
+
+<!-- proeverijen -->
+<section class="wrap" id="proeverijen">
+  <div class="sec-head">
+    <span class="label" data-i18n="tast.label">Proeverijen</span>
+    <h2 data-i18n="tast.h2">Elke laatste vrijdag, acht flessen, twaalf stoelen</h2>
+    <p data-i18n="tast.p">Om 20:00 in de kelder. Geen vooropleiding nodig, wel de bereidheid om hardop te zeggen dat u iets niet lekker vindt.</p>
+  </div>
+  <div class="tast-grid">
+  <figure class="tast-pic">
+    <img class="shot" src="img/vaten.jpg" width="900" height="620" alt="Drie gesneden eiken vaten in de kelder" loading="lazy" decoding="async">
+  </figure>
+  <div class="tastings">
+    <div class="tasting">
+      <span class="date" data-i18n="t1.date">vrijdag 27 november 2026</span>
+      <span class="what"><strong data-i18n="t1.title">Rh&ocirc;ne van noord naar zuid</strong><span data-i18n="t1.sub">Acht wijnen, brood en kaas inbegrepen</span></span>
+      <span class="seats num" data-i18n="t1.seats">nog 5 plaatsen</span>
+      <button class="btn btn-line btn-sm book" data-what="Rhone van noord naar zuid" data-i18n="btn.book1">Reserveer &euro; 35</button>
+    </div>
+    <div class="tasting">
+      <span class="date" data-i18n="t2.date">vrijdag 18 december 2026</span>
+      <span class="what"><strong data-i18n="t2.title">Bubbels zonder champagne</strong><span data-i18n="t2.sub">Cr&eacute;mant, cava en p&eacute;t-nat uit vier landen</span></span>
+      <span class="seats few num" data-i18n="t2.seats">nog 2 plaatsen</span>
+      <button class="btn btn-line btn-sm book" data-what="Bubbels zonder champagne" data-i18n="btn.book2">Reserveer &euro; 40</button>
+    </div>
+    <div class="tasting">
+      <span class="date" data-i18n="t3.date">vrijdag 29 januari 2027</span>
+      <span class="what"><strong data-i18n="t3.title">Natuurwijn voor sceptici</strong><span data-i18n="t3.sub">Zes flessen, met en zonder sulfiet naast elkaar</span></span>
+      <span class="seats num" data-i18n="t3.seats">nog 9 plaatsen</span>
+      <button class="btn btn-line btn-sm book" data-what="Natuurwijn voor sceptici" data-i18n="btn.book3">Reserveer &euro; 35</button>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- cadeau -->
+<section class="wrap" id="cadeau">
+  <div class="gift">
+    <div class="pic"><img class="shot" src="img/fles.jpg" width="600" height="750" alt="Fles en glas witte wijn" loading="lazy" decoding="async"></div>
+    <div class="copy">
+      <span class="label" data-i18n="gift.label">Cadeaubon</span>
+      <h2 data-i18n="gift.h2">Laat hen zelf kiezen</h2>
+      <p data-i18n="gift.p">Geldig op alles in de winkel en op proeverijen, twee jaar lang. Wij schrijven er met de hand een woordje bij als u dat wil.</p>
+      <div class="opts" role="group" aria-label="Kies een bedrag">
+        <button type="button" data-gift="25" aria-pressed="false">&euro; 25</button>
+        <button type="button" data-gift="50" aria-pressed="true">&euro; 50</button>
+        <button type="button" data-gift="75" aria-pressed="false">&euro; 75</button>
+        <button type="button" data-gift="100" aria-pressed="false">&euro; 100</button>
+      </div>
+      <button class="btn btn-fill" id="gift-add" data-i18n="gift.btn">Cadeaubon van &euro; 50 in mandje</button>
+    </div>
+  </div>
+</section>
+
+<!-- ons verhaal -->
+<section class="wrap" id="verhaal">
+  <div class="about">
+    <div class="copy">
+      <span class="label" data-i18n="ab.label">Ons verhaal</span>
+      <h2 data-i18n="ab.h2">Drie generaties, &eacute;&eacute;n kelder</h2>
+      <p data-i18n="ab.p1">Grootvader Clos begon in 1974 met vaten uit de Languedoc en een bestelwagen die het zelden haalde tot voorbij Lyon. Zijn kleindochter rijdt nog altijd zelf naar de domeinen, nu met een koelwagen en een lijst van tweeënveertig adressen.</p>
+      <p data-i18n="ab.p2">Wat sindsdien niet veranderde: we verkopen niets wat we niet zelf geproefd hebben, en we zeggen het eerlijk wanneer een jaar tegenvalt.</p>
+      <div class="pull" data-i18n="ab.quote">&ldquo;Een goede wijn is er een waarvan de tweede fles sneller leeg is dan de eerste.&rdquo;</div>
+      <a class="btn btn-line" href="#contact" data-i18n="ab.btn">Kom langs in de winkel</a>
+    </div>
+    <div class="panel">
+      <h3 data-i18n="ab.hours">Openingsuren</h3>
+      <div class="rows">
+        <div><span data-i18n="day.1">Dinsdag &ndash; vrijdag</span><b class="num">10:00 &ndash; 18:30</b></div>
+        <div><span data-i18n="day.2">Zaterdag</span><b class="num">09:00 &ndash; 18:00</b></div>
+        <div><span data-i18n="day.3">Zondag</span><b class="num">10:00 &ndash; 13:00</b></div>
+        <div><span data-i18n="day.4">Maandag</span><b data-i18n="day.closed">gesloten</b></div>
+      </div>
+      <hr class="rule">
+      <h3 data-i18n="ab.figures">In cijfers</h3>
+      <div class="rows">
+        <div><span data-i18n="fig.1">Domeinen</span><b class="num">42</b></div>
+        <div><span data-i18n="fig.2">Wijnen op voorraad</span><b class="num">310</b></div>
+        <div><span data-i18n="fig.3">Flessen in de kelder</span><b class="num">18.000</b></div>
+        <div><span data-i18n="fig.4">Proeverijen per jaar</span><b class="num">12</b></div>
+      </div>
+      <p class="fineprint" data-i18n="ab.note">Voorbeeldcijfers. Hier komen de echte gegevens van de zaak.</p>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<div class="band pairing" id="contact">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr;gap:2rem;justify-items:stretch;text-align:left">
+    <div class="about" style="align-items:start">
+      <div class="copy">
+        <span class="label" data-i18n="co.label">Contact</span>
+        <h2 data-i18n="co.h2">Sleepstraat 118, Gent</h2>
+        <div class="contact-lines">
+          <div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span data-i18n="co.addr">Sleepstraat 118, 9000 Gent &middot; parkeren op de Vrijdagmarkt</span>
+          </div>
+          <div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
+            <span class="copyline"><span class="num" id="tel">+32 9 123 45 67</span><button class="btn btn-line btn-sm" data-copy="tel" data-i18n="btn.copy">Kopieer</button></span>
+          </div>
+          <div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span class="copyline"><span id="mail">hallo@closenkelder.be</span><button class="btn btn-line btn-sm" data-copy="mail" data-i18n="btn.copy2">Kopieer</button></span>
+          </div>
+        </div>
+        <p class="fineprint" data-i18n="co.note">Alle contactgegevens zijn verzonnen voor dit voorbeeld.</p>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="nl.h3">Wijnbrief</h3>
+        <p style="font-size:.92rem;color:var(--cream-2)" data-i18n="nl.p">Eens per maand: wat er binnenkwam, wat bijna op is en wanneer de volgende proeverij valt.</p>
+        <form id="nl-form">
+          <label for="f-name"><span data-i18n="nl.name">Naam</span><input type="text" id="f-name" required></label>
+          <label for="f-mail"><span data-i18n="nl.mail">E-mailadres</span><input type="email" id="f-mail" required></label>
+          <button class="btn btn-fill" type="submit" data-i18n="nl.btn">Inschrijven</button>
+          <p class="ok" id="nl-ok" hidden data-i18n="nl.ok">Bedankt. In de echte website komt deze inschrijving in de mailinglijst terecht.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand">
+        <span class="name">Clos <span style="color:var(--gold);font-style:italic">&amp;</span> Kelder</span>
+        <p data-i18n="f.tag">Wijnhandel sinds 1974. Sleepstraat 118, 9000 Gent.</p>
+        <div class="pay"><span>Bancontact</span><span>iDEAL</span><span>VISA</span><span>Mastercard</span><span>PayPal</span></div>
+      </div>
+      <div>
+        <h4 data-i18n="f.shop">Webshop</h4>
+        <ul>
+          <li><a href="#kelder" data-i18n="c.red2">Rood</a></li>
+          <li><a href="#kelder" data-i18n="c.white2">Wit</a></li>
+          <li><a href="#kelder" data-i18n="c.rose2">Ros&eacute;</a></li>
+          <li><a href="#kelder" data-i18n="c.bubbles2">Bubbels</a></li>
+          <li><a href="#kelder" data-i18n="s.natural2">Natuurwijn</a></li>
+          <li><a href="#cadeau" data-i18n="nav.gift3">Cadeaubon</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="f.service">Klantendienst</h4>
+        <ul>
+          <li><a href="#contact" data-i18n="f.ship">Levering en afhalen</a></li>
+          <li><a href="#contact" data-i18n="f.pay">Betaalmogelijkheden</a></li>
+          <li><a href="#contact" data-i18n="f.ret">Retour en breuk</a></li>
+          <li><a href="#contact" data-i18n="f.terms">Verkoopvoorwaarden</a></li>
+          <li><a href="#proeverijen" data-i18n="f.tast">Proeverijen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="f.contact">Contact</h4>
+        <ul>
+          <li><a href="#contact">+32 9 123 45 67</a></li>
+          <li><a href="#contact">hallo@closenkelder.be</a></li>
+          <li>Sleepstraat 118</li>
+          <li>9000 Gent</li>
+          <li><a href="#contact" data-i18n="f.route">Route en parkeren</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="age">
+      <b class="num">18+</b>
+      <span data-i18n="f.age">Wij verkopen geen alcohol aan personen onder de 18 jaar. Bij levering kan naar een identiteitsbewijs gevraagd worden.</span>
+    </div>
+
+    <details class="credits">
+      <summary data-i18n="cr.summary">Fotoverantwoording</summary>
+      <p style="margin-top:.6rem" data-i18n="cr.intro">Voorbeeldfoto's via Wikimedia Commons, onder hun vrije licentie. In de echte website komen hier eigen foto's van de flessen en de zaak.</p>
+      <ul>
+        <li>Kelder (hero) &mdash; Keirn OConnor, CC BY-SA 2.0</li>
+        <li>Vaten &mdash; Carol M. Highsmith, publiek domein</li>
+        <li>Glas rood &mdash; Auctor quaerendae, CC BY-SA 4.0</li>
+        <li>Rode wijn inschenken &mdash; Fabio Ingrosso, CC BY 2.0</li>
+        <li>Glas wit &mdash; Andr&eacute; Karwath (Aka), CC BY-SA 2.5</li>
+        <li>Fles en glas wit &mdash; Evan Swigart, CC BY 2.0</li>
+        <li>Glas ros&eacute; &mdash; Sarah Stierch, CC BY 4.0</li>
+        <li>Glas oranjewijn &mdash; Sarah Stierch, CC BY 4.0</li>
+        <li>Glas schuimwijn &mdash; Lachlan Hardy, CC BY 2.0</li>
+        <li>Druivenpluk &mdash; Fabio Ingrosso, CC BY 2.0</li>
+        <li>Druiven aan de stok &mdash; Graham, CC BY 2.0</li>
+        <li>Flessenwand &mdash; Daniel Eidsmoe, CC BY 2.0</li>
+      </ul>
+    </details>
+
+    <div class="fbot">
+      <span>Copyright 2026 Clos &amp; Kelder &middot; <a href="#" data-i18n="f.priv">Privacy</a> &middot; <a href="#" data-i18n="f.terms2">Voorwaarden</a> &middot; BE 0123.456.789</span>
+      <span data-i18n="f.web">Webontwerp: uw bedrijfsnaam</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Franse vertaling ──────────────────────────────── */
+  var FR = {
+    'demo.b':'Maquette',
+    'demo.t':"Marchand de vin fictif, domaines et prix inventés. Les photos sont sous licence libre ; ici viendront les photos des bouteilles.",
+    'top.ship':'Livraison offerte dès 150 € · partout en Belgique',
+    'top.account':'Mon compte',
+    'lang.hint':'Plus de langues sur le site réel',
+    'brand.sub':'Marchand de vin · Gand',
+    'ui.search':'Rechercher','ui.searchLabel':'Chercher un vin','ui.searchPh':'Domaine, appellation ou cépage','ui.clear':'Effacer',
+    'nav.wines':'Vins','nav.wines2':'Vins','nav.domains':'Domaines','nav.domains2':'Domaines','nav.natural':'Vin nature',
+    'nav.tastings':'Dégustations','nav.tastings2':'Dégustations','nav.gift':'Chèque-cadeau','nav.gift2':'Chèque-cadeau','nav.gift3':'Chèque-cadeau',
+    'nav.story':'Notre histoire','nav.story2':'Notre histoire','nav.contact':'Contact','nav.contact2':'Contact',
+    'mg.colour':'Par couleur','c.red':'Rouge','c.red2':'Rouge','c.white':'Blanc','c.white2':'Blanc','c.rose':'Rosé','c.rose2':'Rosé',
+    'c.bubbles':'Bulles','c.bubbles2':'Bulles','c.orange':'Vin orange',
+    'mg.region':'Par région','mg.style':'Par style','s.natural':'Vin nature','s.natural2':'Vin nature','s.bio':'Biologique',
+    's.nolow':'Sans alcool','s.keep':'À garder en cave',
+    'mg.budget':'Par budget','b.1':"Jusqu'à 15 €",'b.2':'De 15 à 25 €','b.3':'De 25 à 50 €','b.4':'Plus de 50 €',
+    'mg.note':'310 vins de 42 domaines · prix TVA comprise','mg.link':'Vers la cave →',
+    'hero.eyebrow':'Marchand de vin à Gand · depuis 1974',
+    'hero.h1':'Du vin avec une adresse',
+    'hero.lead':"Nous achetons directement auprès de quarante-deux familles qui font leur propre vin. Pas d'intermédiaire : derrière chaque bouteille, un nom, une parcelle et un millésime.",
+    'hero.cta1':'Découvrir la cave','hero.cta2':'Réserver une dégustation',
+    'hero.f1':'domaines','hero.f2':'vins en stock','hero.f3':'cave familiale',
+    'usp.1':'Conseil personnalisé en boutique','usp.2':'Livraison offerte dès 150 €','usp.3':'Dégustation chaque dernier vendredi',
+    'kelder.label':'La cave','kelder.h2':'Trente-six bouteilles que nous buvons nous-mêmes',
+    'kelder.p':"Une sélection de l'assortiment permanent. Chaque bouteille est dégustée avant de rejoindre les casiers ; les notes de dégustation, nous les écrivons nous-mêmes.",
+    'f.all':'Tout','f.red':'Rouge','f.white':'Blanc','f.rose':'Rosé','f.bubbles':'Bulles','f.natural':'Vin nature',
+    'tag.top':'Coup de cœur','tag.new':'Nouveau','tag.natural':'Vin nature',
+    'w1.note':'Cerise mûre et poivre noir, tanins souples. Prêt à boire, ou à garder trois ans encore.',
+    'w2.note':'Pierre à fusil et pomme verte, acidité franche. Vignes de soixante ans sur kimméridgien.',
+    'w3.note':"Fraise et pêche, finale bien sèche. Pas un rosé d'été qui se boit sans rien dire.",
+    'w4.note':'Bulle fine, poire et brioche. Dix-huit mois sur lattes ; plus sec que la plupart des champagnes.',
+    'w4.dos':'sans dosage',
+    'w5.note':'Prune et vanille, douze mois en chêne américain. La bouteille du long mijoté du dimanche.',
+    'w6.note':"Écorce d'orange et thé noir, légèrement tannique. Non filtré, une pointe de soufre.",
+    'w6.skin':'30 jours de macération',
+    'vat':'TVA comprise','vat2':'TVA comprise','vat3':'TVA comprise','vat4':'TVA comprise','vat5':'TVA comprise','vat6':'TVA comprise',
+    'btn.add1':'Au panier','btn.add2':'Au panier','btn.add3':'Au panier','btn.add4':'Au panier','btn.add5':'Au panier','btn.add6':'Au panier',
+    'kelder.empty':"Aucun vin trouvé. Sur le vrai site, les 310 bouteilles s'affichent ici.",
+    'kelder.six':'Par six bouteilles, panachées si vous voulez : 5 % de remise. Dès douze bouteilles, livraison offerte à Gand.',
+    'pair.label':'Accords','pair.h2':'Que servir avec ?',
+    'pair.p':'Choisissez ce qui arrive sur la table, nous cherchons la bouteille. En boutique nous faisons pareil, avec quelques questions en plus.',
+    'd.fish':'Poissons et crustacés','d.meat':'Viande grillée','d.cheese':'Plateau de fromages','d.ap':'Apéritif','d.veg':'Végétarien',
+    'dom.label':'Domaine à la une','dom.h2':'Domaine des Hauts Verniers',
+    'dom.p1':"Marthe et Olivier travaillent onze hectares sur les galets au-dessus de Séguret. Ils labourent au cheval parce que le tracteur abîmait les terrasses, et vendangent à la main en deux passages.",
+    'dom.p2':"Nous achetons ici depuis 1998. Chaque année en mars nous passons goûter sur fût ; ce que nous choisissons, nous l'achetons en entier.",
+    'dom.f1':'Région','dom.f2':'Superficie','dom.f3':'Travail','dom.f3v':'Bio, labour au cheval','dom.f4':'Chez nous depuis',
+    'dom.btn':'Les vins de ce domaine',
+    'strip.cap':'Notre cave sous la Sleepstraat · photo d’exemple',
+    'tast.label':'Dégustations','tast.h2':'Chaque dernier vendredi, huit bouteilles, douze chaises',
+    'tast.p':"À 20h00 dans la cave. Aucune formation requise, mais il faut oser dire tout haut qu'on n'aime pas.",
+    't1.date':'vendredi 27 novembre 2026','t1.title':'La vallée du Rhône, du nord au sud','t1.sub':'Huit vins, pain et fromage compris','t1.seats':'5 places restantes',
+    't2.date':'vendredi 18 décembre 2026','t2.title':'Des bulles sans champagne','t2.sub':'Crémant, cava et pét-nat de quatre pays','t2.seats':'2 places restantes',
+    't3.date':'vendredi 29 janvier 2027','t3.title':'Le vin nature pour les sceptiques','t3.sub':'Six bouteilles, avec et sans soufre côte à côte','t3.seats':'9 places restantes',
+    'btn.book1':'Réserver 35 €','btn.book2':'Réserver 40 €','btn.book3':'Réserver 35 €',
+    'gift.label':'Chèque-cadeau','gift.h2':'Laissez-les choisir',
+    'gift.p':'Valable sur tout le magasin et sur les dégustations, pendant deux ans. Nous y ajoutons un mot à la main si vous le souhaitez.',
+    'gift.btn':'Chèque-cadeau de 50 € au panier',
+    'ab.label':'Notre histoire','ab.h2':'Trois générations, une seule cave',
+    'ab.p1':"Grand-père Clos a commencé en 1974 avec des fûts du Languedoc et une camionnette qui dépassait rarement Lyon. Sa petite-fille conduit toujours elle-même jusqu'aux domaines, aujourd'hui en camion frigorifique, avec une liste de quarante-deux adresses.",
+    'ab.p2':"Ce qui n'a pas changé : nous ne vendons rien que nous n'ayons goûté, et nous le disons franchement quand un millésime déçoit.",
+    'ab.quote':'« Un bon vin, c’est celui dont la deuxième bouteille se vide plus vite que la première. »',
+    'ab.btn':'Passez à la boutique','ab.hours':'Heures d’ouverture',
+    'day.1':'Mardi – vendredi','day.2':'Samedi','day.3':'Dimanche','day.4':'Lundi','day.closed':'fermé',
+    'ab.figures':'En chiffres','fig.1':'Domaines','fig.2':'Vins en stock','fig.3':'Bouteilles en cave','fig.4':'Dégustations par an',
+    'ab.note':'Chiffres d’exemple. Les vraies données de la maison viendront ici.',
+    'co.label':'Contact','co.h2':'Sleepstraat 118, Gand',
+    'co.addr':'Sleepstraat 118, 9000 Gand · parking au Vrijdagmarkt',
+    'co.note':'Toutes les coordonnées sont inventées pour cette maquette.',
+    'btn.copy':'Copier','btn.copy2':'Copier',
+    'nl.h3':'Lettre du vin','nl.p':"Une fois par mois : les arrivages, ce qui est bientôt épuisé et la date de la prochaine dégustation.",
+    'nl.name':'Nom','nl.mail':'Adresse e-mail','nl.btn':'S’inscrire',
+    'nl.ok':'Merci. Sur le site réel, cette inscription arrive dans la liste de diffusion.',
+    'f.tag':'Marchand de vin depuis 1974. Sleepstraat 118, 9000 Gand.',
+    'f.shop':'Boutique','f.service':'Service client','f.ship':'Livraison et retrait','f.pay':'Moyens de paiement',
+    'f.ret':'Retour et casse','f.terms':'Conditions de vente','f.terms2':'Conditions','f.tast':'Dégustations',
+    'f.contact':'Contact','f.route':'Itinéraire et parking','f.priv':'Vie privée','f.web':'Conception web : le nom de votre société',
+    'f.age':"Nous ne vendons pas d'alcool aux personnes de moins de 18 ans. Une pièce d'identité peut être demandée à la livraison.",
+    'cr.summary':'Crédits photo',
+    'cr.intro':"Photos d'exemple via Wikimedia Commons, sous leur licence libre. Sur le site réel viendront ici vos propres photos."
+  };
+
+  var STR = {
+    nl:{
+      added:function(n,p){ return 'In het mandje: ' + n + ' · ' + p; },
+      cartEmpty:'Uw mandje is nog leeg.',
+      cartSome:function(n,total){ return n + ' fles(sen) in het mandje · ' + total; },
+      booked:function(w){ return 'Plaats gereserveerd voor “' + w + '”. In de echte website volgt een bevestigingsmail.'; },
+      copied:function(t){ return 'Gekopieerd: ' + t; },
+      selected:'Geselecteerd — kopieer met Ctrl+C.',
+      giftBtn:function(a){ return 'Cadeaubon van € ' + a + ' in mandje'; },
+      giftName:function(a){ return 'Cadeaubon € ' + a; },
+      langSet:'De website staat nu in het Nederlands.'
+    },
+    fr:{
+      added:function(n,p){ return 'Au panier : ' + n + ' · ' + p; },
+      cartEmpty:'Votre panier est encore vide.',
+      cartSome:function(n,total){ return n + ' bouteille(s) au panier · ' + total; },
+      booked:function(w){ return 'Place réservée pour « ' + w + ' ». Sur le site réel, un e-mail de confirmation suit.'; },
+      copied:function(t){ return 'Copié : ' + t; },
+      selected:'Sélectionné — copiez avec Ctrl+C.',
+      giftBtn:function(a){ return 'Chèque-cadeau de ' + a + ' € au panier'; },
+      giftName:function(a){ return 'Chèque-cadeau ' + a + ' €'; },
+      langSet:'Le site est maintenant en français.'
+    }
+  };
+
+  var PAIRS = {
+    vis:{
+      nl:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'De strakke zuren snijden door boter en room heen, en de vuursteen laat schelpdieren zouter smaken. Bij gegrilde vis mag de fles een halfuur uit de koelkast.'},
+      fr:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'Son acidité tranche le beurre et la crème, et la pierre à fusil rend les coquillages plus iodés. Avec un poisson grillé, sortez la bouteille du frigo une demi-heure avant.'}
+    },
+    vlees:{
+      nl:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Zwarte peper in de wijn en houtskool op het vlees doen hetzelfde werk. Grenache heeft genoeg vlees op de botten voor een entrecote, zonder de tannine van een jonge bordeaux.'},
+      fr:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Le poivre noir du vin et le charbon de bois font le même travail. Le grenache a assez de chair pour une entrecôte, sans les tanins d’un bordeaux jeune.'}
+    },
+    kaas: {
+      nl:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Oranjewijn is de uitweg uit de kaasplank: licht tannisch genoeg voor een oude Comté, fris genoeg voor geitenkaas. Rode wijn struikelt meestal over de blauwe.'},
+      fr:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Le vin orange résout le plateau de fromages : assez tannique pour un vieux comté, assez frais pour un chèvre. Le rouge, lui, bute sur les bleus.'}
+    },
+    aperitief:{
+      nl:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Zonder dosage blijft de mond droog, dus de eerste hap smaakt nog ergens naar. Schenk hem in een wijnglas in plaats van een fluit; de geur heeft ruimte nodig.'},
+      fr:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Sans dosage, la bouche reste sèche : la première bouchée garde donc du goût. Servez-le dans un verre à vin plutôt qu’une flûte, le nez a besoin de place.'}
+    },
+    groenten:{
+      nl:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Geroosterde groenten met olijfolie en tijm vragen iets dat fris is maar wel kleur heeft. Een saignee heeft meer body dan een bleke rosé en houdt stand naast gegrilde paprika.'},
+      fr:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Des légumes rôtis à l’huile d’olive et au thym demandent de la fraîcheur mais aussi de la matière. Un saignée a plus de corps qu’un rosé pâle et tient tête au poivron grillé.'}
+    }
+  };
+
+  /* ── taal ──────────────────────────────────────────── */
+  var lang = 'nl';
+  var originals = new Map(), originalPh = new Map();
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){ originals.set(el, el.textContent); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-ph]'), function(el){ originalPh.set(el, el.getAttribute('placeholder')); });
+
+  function t(){ return STR[lang]; }
+
+  function setLang(next){
+    lang = next === 'fr' ? 'fr' : 'nl';
+    originals.forEach(function(nlText, el){
+      var key = el.getAttribute('data-i18n');
+      el.textContent = (lang === 'fr' && FR[key]) ? FR[key] : nlText;
+    });
+    originalPh.forEach(function(nlPh, el){
+      var key = el.getAttribute('data-i18n-ph');
+      el.setAttribute('placeholder', (lang === 'fr' && FR[key]) ? FR[key] : nlPh);
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('lang-label').textContent = lang === 'fr' ? 'FR' : 'NL';
+    Array.prototype.forEach.call(langMenu.querySelectorAll('button[data-lang]'), function(b){
+      b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    renderPair();
+    renderGift();
+    try{ localStorage.setItem('ck-lang', lang); }catch(err){}
+  }
+
+  /* ── hulp ──────────────────────────────────────────── */
+  var nbsp = ' ';
+  function euro(n){ return '€' + nbsp + n.toLocaleString('nl-BE',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+  var toastEl = null, toastTimer = null;
+  function toast(msg){
+    if(!toastEl){
+      toastEl = document.createElement('div');
+      toastEl.className = 'toast';
+      toastEl.setAttribute('role','status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.hidden = true; }, 3000);
+  }
+
+  /* ── mandje ────────────────────────────────────────── */
+  var bottles = 0, total = 0;
+  var cCount = document.getElementById('cart-count'), cTotal = document.getElementById('cart-total');
+  function addToCart(name, amount){
+    bottles += 1; total += amount;
+    cCount.textContent = String(bottles);
+    cTotal.textContent = euro(total);
+    toast(t().added(name, euro(amount)));
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.add'), function(btn){
+    btn.addEventListener('click', function(){
+      addToCart(btn.getAttribute('data-name'), parseFloat(btn.getAttribute('data-euro')));
+    });
+  });
+  document.getElementById('cart-btn').addEventListener('click', function(){
+    toast(bottles ? t().cartSome(bottles, euro(total)) : t().cartEmpty);
+  });
+
+  /* ── filter en zoeken ──────────────────────────────── */
+  var wines = Array.prototype.slice.call(document.querySelectorAll('#wines .wine'));
+  var emptyEl = document.getElementById('wines-empty');
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+  var activeFilter = 'alles', term = '';
+  function applyFilter(){
+    var shown = 0, q = term.trim().toLowerCase();
+    wines.forEach(function(w){
+      var okKleur = activeFilter === 'alles' || w.getAttribute('data-kleur') === activeFilter;
+      var okTerm = !q || w.getAttribute('data-search').indexOf(q) !== -1;
+      var hit = okKleur && okTerm;
+      w.hidden = !hit;
+      if(hit){ shown += 1; }
+    });
+    emptyEl.hidden = shown !== 0;
+  }
+  filterBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      filterBtns.forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      activeFilter = b.getAttribute('data-filter');
+      applyFilter();
+    });
+  });
+
+  var searchbar = document.getElementById('searchbar'), searchBtn = document.getElementById('search-btn');
+  var qInput = document.getElementById('q');
+  searchBtn.addEventListener('click', function(){
+    var open = searchbar.classList.toggle('open');
+    searchBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open){ qInput.focus(); }
+  });
+  qInput.addEventListener('input', function(){ term = qInput.value; applyFilter(); });
+  document.getElementById('q-clear').addEventListener('click', function(){
+    qInput.value = ''; term = ''; applyFilter(); qInput.focus();
+  });
+
+  /* ── spijs en wijn ─────────────────────────────────── */
+  var dishBtns = Array.prototype.slice.call(document.querySelectorAll('.dishes button'));
+  var pairOut = document.getElementById('pair-out');
+  var activeDish = 'vis';
+  function renderPair(){
+    var p = PAIRS[activeDish][lang];
+    pairOut.innerHTML = '';
+    var app = document.createElement('div'); app.className = 'app'; app.textContent = p.app;
+    var w = document.createElement('div'); w.className = 'w'; w.textContent = p.wine;
+    var why = document.createElement('p'); why.className = 'why'; why.textContent = p.why;
+    pairOut.appendChild(app); pairOut.appendChild(w); pairOut.appendChild(why);
+  }
+  dishBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      dishBtns.forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      activeDish = b.getAttribute('data-dish');
+      renderPair();
+    });
+  });
+
+  /* ── cadeaubon ─────────────────────────────────────── */
+  var giftBtns = Array.prototype.slice.call(document.querySelectorAll('.gift .opts button'));
+  var giftAdd = document.getElementById('gift-add');
+  var giftAmount = 50;
+  function renderGift(){ giftAdd.textContent = t().giftBtn(giftAmount); }
+  giftBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      giftBtns.forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      giftAmount = parseInt(b.getAttribute('data-gift'), 10);
+      renderGift();
+    });
+  });
+  giftAdd.addEventListener('click', function(){ addToCart(t().giftName(giftAmount), giftAmount); });
+
+  /* ── proeverijen ───────────────────────────────────── */
+  Array.prototype.forEach.call(document.querySelectorAll('.book'), function(b){
+    b.addEventListener('click', function(){ toast(t().booked(b.getAttribute('data-what'))); });
+  });
+
+  /* ── menu's ────────────────────────────────────────── */
+  var megaBtns = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
+  function closeMega(){
+    megaBtns.forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.mega'), function(m){ m.hidden = true; });
+  }
+  megaBtns.forEach(function(b){
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = b.getAttribute('aria-expanded') === 'true';
+      closeMega();
+      if(!open){
+        b.setAttribute('aria-expanded','true');
+        document.getElementById('mega-' + b.getAttribute('data-mega')).hidden = false;
+      }
+    });
+  });
+
+  var langBtn = document.getElementById('lang-btn'), langMenu = document.getElementById('lang-menu');
+  function closeLang(){ langMenu.hidden = true; langBtn.setAttribute('aria-expanded','false'); }
+  langBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = langBtn.getAttribute('aria-expanded') === 'true';
+    if(open){ closeLang(); } else { langMenu.hidden = false; langBtn.setAttribute('aria-expanded','true'); }
+  });
+  Array.prototype.forEach.call(langMenu.querySelectorAll('button[data-lang]'), function(b){
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      closeLang();
+      setLang(b.getAttribute('data-lang'));
+      toast(t().langSet);
+    });
+  });
+
+  var burger = document.getElementById('burger'), mnav = document.getElementById('mobile-nav');
+  function syncBurger(){ burger.style.display = window.matchMedia('(max-width:760px)').matches ? 'inline-flex' : 'none'; }
+  syncBurger();
+  window.addEventListener('resize', syncBurger);
+  function closeNav(){ mnav.hidden = true; burger.setAttribute('aria-expanded','false'); }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    if(open){ closeNav(); } else { mnav.hidden = false; burger.setAttribute('aria-expanded','true'); }
+  });
+  Array.prototype.forEach.call(mnav.querySelectorAll('a'), function(a){ a.addEventListener('click', closeNav); });
+
+  document.addEventListener('click', function(){ closeMega(); closeLang(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMega(); closeLang(); closeNav(); }
+  });
+
+  /* ── formulier en kopieerknoppen ───────────────────── */
+  document.getElementById('nl-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('nl-ok').hidden = false;
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      var text = el.textContent;
+      function selectText(){
+        try{
+          var r = document.createRange();
+          r.selectNodeContents(el);
+          var s = window.getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          toast(t().selected);
+        }catch(err){ toast(text); }
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ toast(t().copied(text)); }, selectText);
+      } else { selectText(); }
+    });
+  });
+
+  /* ── start ─────────────────────────────────────────── */
+  renderPair();
+  renderGift();
+  applyFilter();
+  var saved = null;
+  try{ saved = localStorage.getItem('ck-lang'); }catch(err){}
+  if(saved === 'fr'){ setLang('fr'); } else { document.documentElement.lang = 'nl'; }
+})();
+</script>

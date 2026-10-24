@@ -29,6 +29,16 @@ Geen build-stap, geen dependencies. Dubbelklik `index.html` om hem lokaal te bek
   Vervang ze door eigen productfoto's: zelfde bestandsnaam in `img/` en klaar.
 - De gele balk bovenaan de pagina markeert dit als voorbeeld en kan eruit
 
+## Tweede voorbeeld: `wijnhandel-demo/`
+
+Een los voorbeeld in een heel ander genre en een heel andere vormgeving: **Clos & Kelder**, een
+verzonnen Belgische wijnhandel, in de lijn van [vineo.be](https://www.vineo.be/). Donkere
+uitstraling, webshop met kleurfilter, spijs-en-wijnkiezer, proeverijen met reservering,
+cadeaubon en een taalkeuze Nederlands ↔ Frans. Zelfde opzet: één `index.html` plus een map `img/`.
+
+Via GitHub Pages komt dit voorbeeld op `/wijnhandel-demo/` te staan. Wil je er een losse site van
+maken, verplaats de map dan naar een eigen repo.
+
 ## Aanpassen
 
 Kleuren, lettertypen en afrondingen staan als tokens bovenaan het `:root`-blok in `index.html`.
