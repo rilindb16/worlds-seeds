@@ -1,0 +1,8 @@
+# deploybestand, niet in versiebeheer
+worlds-seeds-demo.zip
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
