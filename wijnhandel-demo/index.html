@@ -266,12 +266,38 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
   .usp div + div{border-left:0;border-top:1px solid var(--line)}
   .masthead{grid-template-columns:auto 1fr auto}
   .brand{justify-items:center}
+  /* proeverijen onder elkaar, knop over de volle breedte */
+  .tasting{grid-template-columns:1fr;gap:.5rem;padding:1.2rem 0}
+  .tasting .date{grid-column:auto;min-width:0;font-size:1rem;color:var(--gold)}
+  .tasting .seats{justify-self:start;white-space:normal}
+  .tasting .book{width:100%;margin-top:.3rem}
+  /* bandfoto: bijschrift leesbaar houden op een smalle band */
+  .strip{height:clamp(170px,46vw,320px)}
+  .strip figcaption{padding-top:1.7rem;font-size:.68rem;letter-spacing:.1em}
+}
+/* aanraakvlakken: minstens een duimbreedte, op elk apparaat zonder muis */
+@media (max-width:760px), (hover:none){
+  .topbar .wrap{padding-block:.2rem}
+  .topbar a,.lang-btn{padding-block:.6rem;display:inline-flex;align-items:center}
+  .icon-btn{padding:.55rem .4rem}
+  .mega a{display:inline-block;padding-block:.5rem}
+  .mobile-nav a{padding-block:.85rem}
+  .nav-link{padding-block:1.05rem}
+  .filters button,.dishes button{padding:.7rem 1.1rem}
+  .gift .opts button{padding:.6rem 1.1rem}
+  .btn-sm{padding:.7rem 1rem}
+  footer ul{gap:.05rem}
+  footer li a{display:inline-block;padding-block:.5rem}
+  .credits summary{padding-block:.5rem}
 }
 @media (max-width:560px){
   .wines{grid-template-columns:1fr;gap:2rem}
   .fcols{grid-template-columns:1fr}
   .hero-facts{gap:1.4rem}
   .mast-left .lbl,.mast-right .lbl{display:none}
+  .wine .foot{gap:.9rem}
+  .wine .foot .btn{flex:1 1 auto;justify-content:center}
+  .calc{gap:1.1rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>

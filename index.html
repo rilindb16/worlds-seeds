@@ -287,12 +287,43 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
   .nav-row{display:none}
   .usp .wrap{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
+  /* kopregel krap houden zodat logo, mandje en menu naast elkaar passen */
+  .head-row{gap:.7rem;padding-block:.7rem}
+  .brand{min-width:0}
+  .brand .mark{width:32px;height:32px}
+  .brand-name{font-size:1.1rem}
+  .cart{padding:.5rem .6rem;gap:.45rem}
+  .burger{padding:.55rem .6rem}
+  /* kerncijfers naast elkaar in plaats van 2 + 1 */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+  .fact b{font-size:1.2rem}
+  .fact span{font-size:.68rem;letter-spacing:0}
+}
+/* aanraakvlakken: minstens een duimbreedte, op elk apparaat zonder muis */
+@media (max-width:760px), (hover:none){
+  .topbar .wrap{padding-block:.15rem}
+  .topbar a,.lang-btn{padding-block:.6rem;display:inline-flex;align-items:center}
+  .topbar-right{gap:1rem}
+  .link-more{padding-block:.55rem;display:inline-block}
+  .chip{padding-block:.55rem}
+  .az-list{gap:.1rem .9rem}
+  .az-list a{padding-block:.45rem;display:inline-block}
+  .letters button{width:2.4rem;height:2.4rem}
+  .mega a,.mobile-nav a{padding-block:.65rem}
+  .nav-link{padding-block:.95rem}
+  footer ul{gap:.05rem}
+  footer li a{display:inline-block;padding-block:.5rem}
+  .credits summary{padding-block:.5rem}
+  .btn-sm{padding:.65rem 1rem}
 }
 @media (max-width:560px){
   .cats,.grid{grid-template-columns:1fr}
   .brand-sub{display:none}
+  .cart-total{display:none}
   .fcols{grid-template-columns:1fr}
   .about-photo{aspect-ratio:3/2}
+  .card .foot{gap:.9rem}
+  .card .foot .btn{flex:1 1 auto;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
