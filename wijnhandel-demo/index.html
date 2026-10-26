@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Karla:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Karla:wght@400;500;600;700&family=Noto+Serif:wght@400;600&family=Noto+Sans:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: wijnetiket — gecentreerde masthead, haarlijnen in goud, flessen op een rek als portretkaarten */
 :root{
@@ -17,8 +17,8 @@
   --gold:#C8A24A;
   --line:rgba(242,235,226,.15);
   --line-strong:rgba(242,235,226,.3);
-  --font-display:'Bodoni Moda',Georgia,'Times New Roman',serif;
-  --font-body:'Karla','Helvetica Neue',Arial,sans-serif;
+  --font-display:'Bodoni Moda','Noto Serif',Georgia,'Times New Roman',serif;
+  --font-body:'Karla','Noto Sans','Helvetica Neue',Arial,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -297,6 +297,8 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
         <div class="lang-menu" id="lang-menu" hidden>
           <button type="button" data-lang="nl" aria-current="true">Nederlands</button>
           <button type="button" data-lang="fr" aria-current="false">Fran&ccedil;ais</button>
+          <button type="button" data-lang="en" aria-current="false">English</button>
+          <button type="button" data-lang="ru" aria-current="false">Русский</button>
           <p class="hint" data-i18n="lang.hint">Meer talen in de echte website</p>
         </div>
       </div>
@@ -882,6 +884,173 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
     'cr.intro':"Photos d'exemple via Wikimedia Commons, sous leur licence libre. Sur le site réel viendront ici vos propres photos."
   };
 
+  /* ── Engelse vertaling ─────────────────────────────── */
+  var EN = {
+    'demo.b':'Design preview',
+    'demo.t':"An invented wine merchant with invented estates and prices. The photos are free-licence samples; the shop's own bottle photos go here.",
+    'top.ship':'Free delivery from € 150 · anywhere in Belgium',
+    'top.account':'My account',
+    'lang.hint':'More languages in the real website',
+    'brand.sub':'Wine merchant · Ghent',
+    'ui.search':'Search','ui.searchLabel':'Search for a wine','ui.searchPh':'Estate, appellation or grape','ui.clear':'Clear',
+    'nav.wines':'Wines','nav.wines2':'Wines','nav.domains':'Estates','nav.domains2':'Estates','nav.natural':'Natural wine',
+    'nav.tastings':'Tastings','nav.tastings2':'Tastings','nav.gift':'Gift voucher','nav.gift2':'Gift voucher','nav.gift3':'Gift voucher',
+    'nav.story':'Our story','nav.story2':'Our story','nav.contact':'Contact','nav.contact2':'Contact',
+    'mg.colour':'By colour','c.red':'Red','c.red2':'Red','c.white':'White','c.white2':'White','c.rose':'Rosé','c.rose2':'Rosé',
+    'c.bubbles':'Sparkling','c.bubbles2':'Sparkling','c.orange':'Orange wine',
+    'mg.region':'By region','mg.style':'By style','s.natural':'Natural wine','s.natural2':'Natural wine','s.bio':'Organic',
+    's.nolow':'Alcohol-free','s.keep':'For the cellar',
+    'mg.budget':'By budget','b.1':'Up to € 15','b.2':'€ 15 to € 25','b.3':'€ 25 to € 50','b.4':'Above € 50',
+    'mg.note':'310 wines from 42 estates · prices incl. VAT','mg.link':'To the cellar →',
+    'hero.eyebrow':'Wine merchant in Ghent · since 1974',
+    'hero.h1':'Wine with an address',
+    'hero.lead':'We buy directly from forty-two families who make their own wine. No middlemen: every bottle comes with a name, a plot and a vintage.',
+    'hero.cta1':'Explore the cellar','hero.cta2':'Book a tasting',
+    'hero.f1':'estates','hero.f2':'wines in stock','hero.f3':'our own cellar',
+    'usp.1':'Personal advice in the shop','usp.2':'Free delivery from € 150','usp.3':'A tasting every last Friday',
+    'kelder.label':'The cellar','kelder.h2':'Thirty-six bottles we drink ourselves',
+    'kelder.p':'A selection from the permanent range. Every bottle is tasted before it reaches the racks, and we write the tasting notes ourselves.',
+    'f.all':'All','f.red':'Red','f.white':'White','f.rose':'Rosé','f.bubbles':'Sparkling','f.natural':'Natural wine',
+    'tag.top':'House favourite','tag.new':'New','tag.natural':'Natural wine',
+    'w1.note':'Ripe cherry and black pepper, soft tannins. Ready to drink, or keep another three years.',
+    'w2.note':'Flint and green apple, taut acidity. Sixty-year-old vines on Kimmeridgian soil.',
+    'w3.note':'Strawberry and peach, bone-dry finish. Not a summer rosé that slips by without saying anything.',
+    'w4.dos':'zero dosage',
+    'w4.note':'Fine bubble, pear and brioche. Eighteen months on the lees; drier than most champagnes.',
+    'w5.note':'Plum and vanilla, twelve months in American oak. The bottle for a slow Sunday stew.',
+    'w6.skin':'30 days on the skins',
+    'w6.note':'Orange peel and black tea, lightly tannic. Unfiltered, with a touch of sulphur.',
+    'vat':'incl. VAT','vat2':'incl. VAT','vat3':'incl. VAT','vat4':'incl. VAT','vat5':'incl. VAT','vat6':'incl. VAT',
+    'btn.add1':'Add to basket','btn.add2':'Add to basket','btn.add3':'Add to basket','btn.add4':'Add to basket','btn.add5':'Add to basket','btn.add6':'Add to basket',
+    'kelder.empty':'No wine found. The real shop lists all 310 bottles here.',
+    'kelder.six':'Per six bottles, mixed if you like: 5% off. From twelve bottles we deliver free within Ghent.',
+    'pair.label':'Food and wine','pair.h2':'What do you pour with it?',
+    'pair.p':'Tell us what is on the table and we will find the bottle. We do exactly the same in the shop, only with more questions.',
+    'd.fish':'Fish and shellfish','d.meat':'Grilled meat','d.cheese':'Cheese board','d.ap':'Aperitif','d.veg':'Vegetarian',
+    'dom.label':'Estate in the spotlight','dom.h2':'Domaine des Hauts Verniers',
+    'dom.p1':'Marthe and Olivier work eleven hectares on the stony soil above Séguret. They plough with a horse because the tractor wrecked the terraces, and they pick by hand in two passes.',
+    'dom.p2':'We have been buying here since 1998. Every March we visit to taste from the barrel; whatever we choose, we buy in full.',
+    'dom.f1':'Region','dom.f2':'Area','dom.f3':'Cultivation','dom.f3v':'Organic, ploughed with a horse','dom.f4':'With us since',
+    'dom.btn':'The wines of this estate',
+    'strip.cap':'Our cellar under the Sleepstraat · sample photo',
+    'tast.label':'Tastings','tast.h2':'Every last Friday, eight bottles, twelve chairs',
+    'tast.p':'At 20:00 in the cellar. No training required, but you do need the nerve to say out loud that you do not like something.',
+    't1.date':'Friday 27 November 2026','t1.title':'The Rhône from north to south','t1.sub':'Eight wines, bread and cheese included','t1.seats':'5 seats left',
+    't2.date':'Friday 18 December 2026','t2.title':'Bubbles without champagne','t2.sub':'Crémant, cava and pét-nat from four countries','t2.seats':'2 seats left',
+    't3.date':'Friday 29 January 2027','t3.title':'Natural wine for sceptics','t3.sub':'Six bottles, with and without sulphur side by side','t3.seats':'9 seats left',
+    'btn.book1':'Book € 35','btn.book2':'Book € 40','btn.book3':'Book € 35',
+    'gift.label':'Gift voucher','gift.h2':'Let them choose',
+    'gift.p':'Valid on everything in the shop and on tastings, for two years. We will add a handwritten note if you want one.',
+    'gift.btn':'Add € 50 gift voucher',
+    'ab.label':'Our story','ab.h2':'Three generations, one cellar',
+    'ab.p1':'Grandfather Clos started in 1974 with barrels from the Languedoc and a van that rarely made it past Lyon. His granddaughter still drives to the estates herself, now in a refrigerated truck with a list of forty-two addresses.',
+    'ab.p2':'What has not changed: we sell nothing we have not tasted, and we say so honestly when a vintage disappoints.',
+    'ab.quote':'“A good wine is one whose second bottle empties faster than the first.”',
+    'ab.btn':'Visit us in the shop','ab.hours':'Opening hours',
+    'day.1':'Tuesday – Friday','day.2':'Saturday','day.3':'Sunday','day.4':'Monday','day.closed':'closed',
+    'ab.figures':'In figures','fig.1':'Estates','fig.2':'Wines in stock','fig.3':'Bottles in the cellar','fig.4':'Tastings per year',
+    'ab.note':'Sample figures. The real numbers of the shop go here.',
+    'co.label':'Contact','co.h2':'Sleepstraat 118, Ghent',
+    'co.addr':'Sleepstraat 118, 9000 Ghent · parking at the Vrijdagmarkt',
+    'co.note':'All contact details are invented for this preview.',
+    'btn.copy':'Copy','btn.copy2':'Copy',
+    'nl.h3':'Wine letter','nl.p':'Once a month: what came in, what is nearly gone and when the next tasting falls.',
+    'nl.name':'Name','nl.mail':'Email address','nl.btn':'Subscribe',
+    'nl.ok':'Thank you. In the real website this subscription lands in the mailing list.',
+    'f.tag':'Wine merchant since 1974. Sleepstraat 118, 9000 Ghent.',
+    'f.shop':'Shop','f.service':'Customer service','f.ship':'Delivery and collection','f.pay':'Payment options',
+    'f.ret':'Returns and breakage','f.terms':'Terms of sale','f.terms2':'Terms','f.tast':'Tastings',
+    'f.contact':'Contact','f.route':'Route and parking','f.priv':'Privacy','f.web':'Web design: your company name',
+    'f.age':'We do not sell alcohol to anyone under 18. Proof of age may be requested on delivery.',
+    'cr.summary':'Photo credits',
+    'cr.intro':'Sample photos via Wikimedia Commons, under their free licence. The real website will show your own photos of the bottles and the shop here.'
+  };
+
+  /* ── Russische vertaling ───────────────────────────── */
+  var RU = {
+    'demo.b':'Демоверсия',
+    'demo.t':'Вымышленный винный магазин с вымышленными хозяйствами и ценами. Фотографии — по свободной лицензии; здесь будут собственные фото бутылок.',
+    'top.ship':'Бесплатная доставка от € 150 · по всей Бельгии',
+    'top.account':'Личный кабинет',
+    'lang.hint':'На настоящем сайте языков будет больше',
+    'brand.sub':'Винный магазин · Гент',
+    'ui.search':'Поиск','ui.searchLabel':'Найти вино','ui.searchPh':'Хозяйство, апелласьон или сорт','ui.clear':'Очистить',
+    'nav.wines':'Вина','nav.wines2':'Вина','nav.domains':'Хозяйства','nav.domains2':'Хозяйства','nav.natural':'Натуральное вино',
+    'nav.tastings':'Дегустации','nav.tastings2':'Дегустации','nav.gift':'Сертификат','nav.gift2':'Сертификат','nav.gift3':'Сертификат',
+    'nav.story':'Наша история','nav.story2':'Наша история','nav.contact':'Контакты','nav.contact2':'Контакты',
+    'mg.colour':'По цвету','c.red':'Красное','c.red2':'Красное','c.white':'Белое','c.white2':'Белое','c.rose':'Розовое','c.rose2':'Розовое',
+    'c.bubbles':'Игристое','c.bubbles2':'Игристое','c.orange':'Оранжевое вино',
+    'mg.region':'По региону','mg.style':'По стилю','s.natural':'Натуральное вино','s.natural2':'Натуральное вино','s.bio':'Органическое',
+    's.nolow':'Безалкогольное','s.keep':'Для выдержки',
+    'mg.budget':'По бюджету','b.1':'До € 15','b.2':'От € 15 до € 25','b.3':'От € 25 до € 50','b.4':'Дороже € 50',
+    'mg.note':'310 вин из 42 хозяйств · цены с НДС','mg.link':'В погреб →',
+    'hero.eyebrow':'Винный магазин в Генте · с 1974 года',
+    'hero.h1':'Вино с адресом',
+    'hero.lead':'Мы покупаем напрямую у сорока двух семей, которые делают вино сами. Без посредников: за каждой бутылкой — имя, участок и год урожая.',
+    'hero.cta1':'Смотреть погреб','hero.cta2':'Записаться на дегустацию',
+    'hero.f1':'хозяйств','hero.f2':'вин в наличии','hero.f3':'собственный погреб',
+    'usp.1':'Личный совет в магазине','usp.2':'Бесплатная доставка от € 150','usp.3':'Дегустация в последнюю пятницу месяца',
+    'kelder.label':'Погреб','kelder.h2':'Тридцать шесть бутылок, которые пьём сами',
+    'kelder.p':'Выборка из постоянного ассортимента. Каждую бутылку мы пробуем до того, как она попадает на полку, и дегустационные заметки пишем сами.',
+    'f.all':'Все','f.red':'Красное','f.white':'Белое','f.rose':'Розовое','f.bubbles':'Игристое','f.natural':'Натуральное',
+    'tag.top':'Выбор магазина','tag.new':'Новинка','tag.natural':'Натуральное',
+    'w1.note':'Спелая вишня и чёрный перец, мягкие танины. Готово к столу или ещё три года в погребе.',
+    'w2.note':'Кремень и зелёное яблоко, строгая кислотность. Лозы шестидесяти лет на кимериджских почвах.',
+    'w3.note':'Клубника и персик, сухое послевкусие. Не то летнее розе, что выпивается незаметно.',
+    'w4.dos':'без дозажа',
+    'w4.note':'Тонкий перляж, груша и бриошь. Восемнадцать месяцев на осадке; суше большинства шампанских.',
+    'w5.note':'Слива и ваниль, двенадцать месяцев в американском дубе. Бутылка к воскресному рагу.',
+    'w6.skin':'30 дней на мезге',
+    'w6.note':'Апельсиновая цедра и чёрный чай, лёгкие танины. Без фильтрации, с минимумом серы.',
+    'vat':'с НДС','vat2':'с НДС','vat3':'с НДС','vat4':'с НДС','vat5':'с НДС','vat6':'с НДС',
+    'btn.add1':'В корзину','btn.add2':'В корзину','btn.add3':'В корзину','btn.add4':'В корзину','btn.add5':'В корзину','btn.add6':'В корзину',
+    'kelder.empty':'Вино не найдено. На настоящем сайте здесь все 310 бутылок.',
+    'kelder.six':'За шесть бутылок, можно вперемешку, — скидка 5%. От двенадцати бутылок доставка по Генту бесплатно.',
+    'pair.label':'Еда и вино','pair.h2':'Что налить к этому?',
+    'pair.p':'Скажите, что будет на столе, а бутылку найдём мы. В магазине делаем так же, только задаём больше вопросов.',
+    'd.fish':'Рыба и морепродукты','d.meat':'Мясо на гриле','d.cheese':'Сырная тарелка','d.ap':'Аперитив','d.veg':'Вегетарианское',
+    'dom.label':'Хозяйство в центре внимания','dom.h2':'Domaine des Hauts Verniers',
+    'dom.p1':'Марта и Оливье обрабатывают одиннадцать гектаров на каменистой почве над Сегюре. Пашут на лошади, потому что трактор разбивал террасы, и собирают урожай вручную в два захода.',
+    'dom.p2':'Мы покупаем здесь с 1998 года. Каждый март приезжаем пробовать из бочки; то, что выбрали, берём целиком.',
+    'dom.f1':'Регион','dom.f2':'Площадь','dom.f3':'Обработка','dom.f3v':'Органика, вспашка на лошади','dom.f4':'С нами с',
+    'dom.btn':'Вина этого хозяйства',
+    'strip.cap':'Наш погреб под Слепстраат · пример фото',
+    'tast.label':'Дегустации','tast.h2':'Каждую последнюю пятницу: восемь бутылок, двенадцать мест',
+    'tast.p':'В 20:00 в погребе. Подготовка не нужна — нужна готовность вслух сказать, что вам что-то не нравится.',
+    't1.date':'пятница, 27 ноября 2026','t1.title':'Рона с севера на юг','t1.sub':'Восемь вин, хлеб и сыр включены','t1.seats':'осталось 5 мест',
+    't2.date':'пятница, 18 декабря 2026','t2.title':'Пузырьки без шампанского','t2.sub':'Креман, кава и пет-нат из четырёх стран','t2.seats':'осталось 2 места',
+    't3.date':'пятница, 29 января 2027','t3.title':'Натуральное вино для скептиков','t3.sub':'Шесть бутылок: с серой и без, рядом','t3.seats':'осталось 9 мест',
+    'btn.book1':'Записаться € 35','btn.book2':'Записаться € 40','btn.book3':'Записаться € 35',
+    'gift.label':'Подарочный сертификат','gift.h2':'Пусть выберут сами',
+    'gift.p':'Действует на всё в магазине и на дегустации в течение двух лет. По желанию добавим записку от руки.',
+    'gift.btn':'Сертификат на 50 € в корзину',
+    'ab.label':'Наша история','ab.h2':'Три поколения, один погреб',
+    'ab.p1':'Дед Кло начал в 1974 году с бочек из Лангедока и фургона, который редко доезжал дальше Лиона. Его внучка до сих пор сама ездит по хозяйствам — теперь на рефрижераторе и со списком из сорока двух адресов.',
+    'ab.p2':'Что не изменилось: мы не продаём то, чего не пробовали, и честно говорим, когда год вышел неудачным.',
+    'ab.quote':'«Хорошее вино — то, у которого вторая бутылка пустеет быстрее первой.»',
+    'ab.btn':'Заходите в магазин','ab.hours':'Часы работы',
+    'day.1':'Вторник – пятница','day.2':'Суббота','day.3':'Воскресенье','day.4':'Понедельник','day.closed':'закрыто',
+    'ab.figures':'В цифрах','fig.1':'Хозяйств','fig.2':'Вин в наличии','fig.3':'Бутылок в погребе','fig.4':'Дегустаций в год',
+    'ab.note':'Цифры условные. Здесь будут настоящие данные магазина.',
+    'co.label':'Контакты','co.h2':'Sleepstraat 118, Гент',
+    'co.addr':'Sleepstraat 118, 9000 Гент · парковка на площади Фрейдагмаркт',
+    'co.note':'Все контактные данные вымышлены для этого примера.',
+    'btn.copy':'Копировать','btn.copy2':'Копировать',
+    'nl.h3':'Винное письмо','nl.p':'Раз в месяц: что поступило, что заканчивается и когда следующая дегустация.',
+    'nl.name':'Имя','nl.mail':'Электронная почта','nl.btn':'Подписаться',
+    'nl.ok':'Спасибо. На настоящем сайте эта подписка попадает в рассылку.',
+    'f.tag':'Винный магазин с 1974 года. Sleepstraat 118, 9000 Гент.',
+    'f.shop':'Магазин','f.service':'Обслуживание клиентов','f.ship':'Доставка и самовывоз','f.pay':'Способы оплаты',
+    'f.ret':'Возврат и бой','f.terms':'Условия продажи','f.terms2':'Условия','f.tast':'Дегустации',
+    'f.contact':'Контакты','f.route':'Как добраться и парковка','f.priv':'Конфиденциальность','f.web':'Веб-дизайн: название вашей компании',
+    'f.age':'Мы не продаём алкоголь лицам младше 18 лет. При доставке могут попросить документ.',
+    'cr.summary':'Источники фотографий',
+    'cr.intro':'Примеры фотографий — Wikimedia Commons, по свободной лицензии. На настоящем сайте здесь будут ваши фото бутылок и магазина.'
+  };
+
+  var DICT = { fr: FR, en: EN, ru: RU };
+  var LANGCODES = { nl:'NL', fr:'FR', en:'EN', ru:'RU' };
+
   var STR = {
     nl:{
       added:function(n,p){ return 'In het mandje: ' + n + ' · ' + p; },
@@ -904,29 +1073,61 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
       giftBtn:function(a){ return 'Chèque-cadeau de ' + a + ' € au panier'; },
       giftName:function(a){ return 'Chèque-cadeau ' + a + ' €'; },
       langSet:'Le site est maintenant en français.'
+    },
+    en:{
+      added:function(n,p){ return 'Added to the basket: ' + n + ' · ' + p; },
+      cartEmpty:'Your basket is still empty.',
+      cartSome:function(n,total){ return n + ' bottle(s) in the basket · ' + total; },
+      booked:function(w){ return 'Seat reserved for “' + w + '”. In the real website a confirmation email follows.'; },
+      copied:function(t){ return 'Copied: ' + t; },
+      selected:'Selected — copy with Ctrl+C.',
+      giftBtn:function(a){ return 'Add € ' + a + ' gift voucher'; },
+      giftName:function(a){ return 'Gift voucher € ' + a; },
+      langSet:'The website is now in English.'
+    },
+    ru:{
+      added:function(n,p){ return 'В корзину: ' + n + ' · ' + p; },
+      cartEmpty:'Ваша корзина пока пуста.',
+      cartSome:function(n,total){ return 'Бутылок в корзине: ' + n + ' · ' + total; },
+      booked:function(w){ return 'Место забронировано: «' + w + '». На настоящем сайте следом придёт письмо-подтверждение.'; },
+      copied:function(t){ return 'Скопировано: ' + t; },
+      selected:'Выделено — скопируйте с Ctrl+C.',
+      giftBtn:function(a){ return 'Сертификат на ' + a + ' € в корзину'; },
+      giftName:function(a){ return 'Сертификат ' + a + ' €'; },
+      langSet:'Сайт переключён на русский.'
     }
   };
 
   var PAIRS = {
     vis:{
       nl:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'De strakke zuren snijden door boter en room heen, en de vuursteen laat schelpdieren zouter smaken. Bij gegrilde vis mag de fles een halfuur uit de koelkast.'},
-      fr:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'Son acidité tranche le beurre et la crème, et la pierre à fusil rend les coquillages plus iodés. Avec un poisson grillé, sortez la bouteille du frigo une demi-heure avant.'}
+      fr:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'Son acidité tranche le beurre et la crème, et la pierre à fusil rend les coquillages plus iodés. Avec un poisson grillé, sortez la bouteille du frigo une demi-heure avant.'},
+      en:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'Its taut acidity cuts through butter and cream, and the flinty note makes shellfish taste saltier. With grilled fish, take the bottle out of the fridge half an hour ahead.'},
+      ru:{app:'Chablis AOC', wine:'Clos de la Perdrix ‘Vieilles Vignes’ 2022', why:'Строгая кислотность режет масло и сливки, а кремнистый тон делает моллюсков солонее. К рыбе с гриля достаньте бутылку из холодильника за полчаса.'}
     },
     vlees:{
       nl:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Zwarte peper in de wijn en houtskool op het vlees doen hetzelfde werk. Grenache heeft genoeg vlees op de botten voor een entrecote, zonder de tannine van een jonge bordeaux.'},
-      fr:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Le poivre noir du vin et le charbon de bois font le même travail. Le grenache a assez de chair pour une entrecôte, sans les tanins d’un bordeaux jeune.'}
+      fr:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Le poivre noir du vin et le charbon de bois font le même travail. Le grenache a assez de chair pour une entrecôte, sans les tanins d’un bordeaux jeune.'},
+      en:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'The black pepper in the wine and the charcoal on the meat do the same job. Grenache has enough flesh on the bones for an entrecôte, without the tannins of a young bordeaux.'},
+      ru:{app:'Côtes du Rhône AOC', wine:'Domaine des Hauts Verniers ‘Les Galets’ 2021', why:'Чёрный перец в вине и уголь на мясе делают одну работу. У гренаша достаточно плоти для антрекота — без танинов молодого бордо.'}
     },
     kaas: {
       nl:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Oranjewijn is de uitweg uit de kaasplank: licht tannisch genoeg voor een oude Comté, fris genoeg voor geitenkaas. Rode wijn struikelt meestal over de blauwe.'},
-      fr:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Le vin orange résout le plateau de fromages : assez tannique pour un vieux comté, assez frais pour un chèvre. Le rouge, lui, bute sur les bleus.'}
+      fr:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Le vin orange résout le plateau de fromages : assez tannique pour un vieux comté, assez frais pour un chèvre. Le rouge, lui, bute sur les bleus.'},
+      en:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:"Orange wine is the way out of the cheese board: tannic enough for an aged Comté, fresh enough for goat's cheese. Red wine usually trips over the blues."},
+      ru:{app:'Toscana IGT', wine:'Tenuta San Fiore ‘Ambra’ 2022', why:'Оранжевое вино выручает на сырной тарелке: танинов хватит на выдержанный конте, свежести — на козий сыр. Красное обычно спотыкается о голубые сыры.'}
     },
     aperitief:{
       nl:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Zonder dosage blijft de mond droog, dus de eerste hap smaakt nog ergens naar. Schenk hem in een wijnglas in plaats van een fluit; de geur heeft ruimte nodig.'},
-      fr:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Sans dosage, la bouche reste sèche : la première bouchée garde donc du goût. Servez-le dans un verre à vin plutôt qu’une flûte, le nez a besoin de place.'}
+      fr:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Sans dosage, la bouche reste sèche : la première bouchée garde donc du goût. Servez-le dans un verre à vin plutôt qu’une flûte, le nez a besoin de place.'},
+      en:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Without dosage the mouth stays dry, so the first bite still tastes of something. Serve it in a wine glass rather than a flute; the nose needs room.'},
+      ru:{app:'Crémant de Loire AOC', wine:'Maison Bardet ‘Brut Nature’', why:'Без дозажа во рту остаётся сухо, и первый кусок ещё имеет вкус. Наливайте в бокал для вина, а не во флейту: аромату нужно место.'}
     },
     groenten:{
       nl:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Geroosterde groenten met olijfolie en tijm vragen iets dat fris is maar wel kleur heeft. Een saignee heeft meer body dan een bleke rosé en houdt stand naast gegrilde paprika.'},
-      fr:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Des légumes rôtis à l’huile d’olive et au thym demandent de la fraîcheur mais aussi de la matière. Un saignée a plus de corps qu’un rosé pâle et tient tête au poivron grillé.'}
+      fr:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Des légumes rôtis à l’huile d’olive et au thym demandent de la fraîcheur mais aussi de la matière. Un saignée a plus de corps qu’un rosé pâle et tient tête au poivron grillé.'},
+      en:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Roast vegetables with olive oil and thyme need freshness but also body. A saignée has more weight than a pale rosé and holds its own next to grilled pepper.'},
+      ru:{app:'Côtes de Provence AOC', wine:'Domaine Lanterne ‘Rosé de Saignée’ 2023', why:'Запечённым овощам с оливковым маслом и тимьяном нужна свежесть, но и тело. У санье больше плотности, чем у бледного розе, и он не теряется рядом с печёным перцем.'}
     }
   };
 
@@ -936,20 +1137,21 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
   Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){ originals.set(el, el.textContent); });
   Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-ph]'), function(el){ originalPh.set(el, el.getAttribute('placeholder')); });
 
-  function t(){ return STR[lang]; }
+  function t(){ return STR[lang] || STR.nl; }
 
   function setLang(next){
-    lang = next === 'fr' ? 'fr' : 'nl';
+    lang = (next === 'nl' || DICT[next]) ? next : 'nl';
+    var d = DICT[lang] || null;
     originals.forEach(function(nlText, el){
       var key = el.getAttribute('data-i18n');
-      el.textContent = (lang === 'fr' && FR[key]) ? FR[key] : nlText;
+      el.textContent = (d && typeof d[key] === 'string') ? d[key] : nlText;
     });
     originalPh.forEach(function(nlPh, el){
       var key = el.getAttribute('data-i18n-ph');
-      el.setAttribute('placeholder', (lang === 'fr' && FR[key]) ? FR[key] : nlPh);
+      el.setAttribute('placeholder', (d && typeof d[key] === 'string') ? d[key] : nlPh);
     });
     document.documentElement.lang = lang;
-    document.getElementById('lang-label').textContent = lang === 'fr' ? 'FR' : 'NL';
+    document.getElementById('lang-label').textContent = LANGCODES[lang] || 'NL';
     Array.prototype.forEach.call(langMenu.querySelectorAll('button[data-lang]'), function(b){
       b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
@@ -1154,6 +1356,6 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
   applyFilter();
   var saved = null;
   try{ saved = localStorage.getItem('ck-lang'); }catch(err){}
-  if(saved === 'fr'){ setLang('fr'); } else { document.documentElement.lang = 'nl'; }
+  if(saved && saved !== 'nl' && DICT[saved]){ setLang(saved); } else { document.documentElement.lang = 'nl'; }
 })();
 </script>

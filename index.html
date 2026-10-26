@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Armenian:wght@400;600;700&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Armenian:wght@400;600;700&family=Noto+Sans+Armenian:wght@400;500;600;700&family=Noto+Serif:wght@400;600&family=Noto+Sans:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: catalogusblad — 1200px raster met dunne lijnen, foto's in vaste beeldverhoudingen, handelsdata in tabelcijfers */
 :root{
@@ -17,8 +17,8 @@
   --green-700:#1B3B29;
   --sun:#E3A72C;
   --poppy:#B9442A;
-  --font-display:'Petrona','Noto Serif Armenian',Georgia,'Times New Roman',serif;
-  --font-body:'Archivo','Noto Sans Armenian','Helvetica Neue',Arial,sans-serif;
+  --font-display:'Petrona','Noto Serif Armenian','Noto Serif',Georgia,'Times New Roman',serif;
+  --font-body:'Archivo','Noto Sans Armenian','Noto Sans','Helvetica Neue',Arial,sans-serif;
   --font-mono:'IBM Plex Mono',ui-monospace,'Courier New',monospace;
   color-scheme:light;
 }
@@ -328,7 +328,9 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
         </button>
         <div class="lang-menu" id="lang-menu" hidden>
           <button type="button" data-lang="nl" aria-current="true">Nederlands</button>
+          <button type="button" data-lang="en" aria-current="false">English</button>
           <button type="button" data-lang="hy" aria-current="false">Հայերեն</button>
+          <button type="button" data-lang="ru" aria-current="false">Русский</button>
           <p class="hint" data-i18n="lang.hint">Meer talen in de echte website</p>
         </div>
       </div>
@@ -1021,6 +1023,209 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
     'cr.intro':'Նմուշային լուսանկարները՝ Wikimedia Commons-ից, իրենց ազատ լիցենզիայով։ Իրական կայքում այստեղ կգան սեփական ապրանքի լուսանկարները։'
   };
 
+  /* ── Engelse vertaling ─────────────────────────────── */
+  var EN = {
+    'demo.b':'Design preview',
+    'demo.t':"All text, prices and company details are placeholder material. The photos are free-licence samples; the company's own product photos go here.",
+    'top.tag':'Wholesale for professional growers · delivery throughout the EU',
+    'lang.hint':'More languages in the real website',
+    'top.login':'Sign in',
+    'brand.sub':'Flower seed wholesale',
+    'search.sr':'Search products',
+    'search.ph':'Search by species, cultivar or article number',
+    'cart.sr':'Shopping cart',
+    'nav.new':'New 2026','nav.new2':'New 2026','nav.new3':'New 2026','nav.newtag':'new',
+    'cat.flower':'Flower seeds','cat.flower2':'Flower seeds','cat.flower3':'Flower seeds','cat.flower4':'Flower seeds',
+    'cat.plant':'Plant seeds','cat.plant2':'Plant seeds','cat.plant3':'Plant seeds','cat.plant4':'Plant seeds',
+    'cat.veg':'Vegetable seeds','cat.veg2':'Vegetable seeds','cat.veg3':'Vegetable seeds','cat.veg4':'Vegetable seeds',
+    'cat.herb':'Herb seeds','cat.herb2':'Herb seeds','cat.herb3':'Herb seeds','cat.herb4':'Herb seeds',
+    'nav.helianthus':'Helianthus','nav.helianthus2':'Helianthus',
+    'nav.az':'Seeds A–Z','nav.az2':'Seeds A–Z',
+    'nav.catalog':'Catalogue','nav.catalog2':'Request catalogue',
+    'nav.outlet':'Outlet','nav.outlet2':'Outlet',
+    'mb.use':'By use','t.cut':'Cut flowers','t.dried':'Dried flowers','t.edible':'Edible flowers','t.pot':'Pot plants','t.bees':'Bees and butterflies',
+    'mb.genus':'Popular genera',
+    'mb.form':'Seed form','t.pelleted':'Pelleted seed','t.naked':'Raw seed','t.mix':'Mixtures','t.bulk':'Bulk packs',
+    'mb.season':'Sowing season','t.spring':'Spring sowing','t.summer':'Summer sowing','t.autumn':'Autumn sowing','t.year':'All year round',
+    'mb.note':'1,412 items in this group · prices per 1,000 seeds, excl. VAT',
+    'mb.link':'See the A–Z index →','m.link':'To the index →','m.link2':'To the index →',
+    'm.cats':'Categories','m.cats2':'Categories',
+    't.perennial':'Perennials','t.grass':'Ornamental grasses','t.climb':'Climbers','t.straw':'Strawberries',
+    'mp.place':'Position','t.sun':'Full sun','t.half':'Partial shade','t.shade':'Shade',
+    'mp.note':'386 items · hardiness zone listed for every item',
+    't.pumpkin':'Pumpkins (Cucurbita)','t.tomato':'Tomatoes','t.leaf':'Leafy crops','t.root':'Root crops',
+    'mg.grow':'Cultivation','t.field':'Open field','t.glass':'Glasshouse','t.organic':'Organic seed',
+    'mg.note':'224 items · every lot with a germination test',
+    'hero.eyebrow':'Wholesale in flower, plant and vegetable seeds',
+    'hero.h1a':'Seed that growers ','hero.h1b':'can count on','hero.h1c':'',
+    'hero.lead':'More than 1,400 species and cultivars from our own stock, supplied per 1,000 seeds with a lot number and a germination test. Order before 15:00 and it is on its way to the nursery tomorrow.',
+    'hero.cta1':'Browse the range','hero.cta2':'Our story',
+    'fact.1':'species in stock','fact.2':'countries supplied','fact.3':'working days delivery in the EU',
+    'usp.1':'Shipped straight from stock','usp.2':'Volume discount on large orders','usp.3':'Fast EU delivery, carriage paid from € 250',
+    'cats.eyebrow':'Range','cats.h2':'A few of our categories','cats.link':'All categories →',
+    'count.flower':'1,412 items','count.veg':'224 items','count.herb':'168 items','count.plant':'386 items',
+    'chips.label':'Frequently searched','chip.1':'Pollen-free Helianthus','chip.3':'Pelleted Lisianthus','chip.4':'Dried flowers','chip.6':'Edible flowers',
+    'prod.eyebrow':'Popular with growers','prod.h2':'Most requested lots',
+    'prod.p':'Prices per seed, excluding VAT. Every lot has its own article number with germination rate and harvest year.',
+    'prod.link':'Full list →','filter.sr':'Filter the list','filter.ph':'Filter by name or article number',
+    'badge.stock':'In stock','badge.stock2':'In stock','badge.stock3':'In stock','badge.stock4':'In stock',
+    'badge.new':'New 2026','badge.pelleted':'Pelleted',
+    'art.nr':'Art. no.','art.nr2':'Art. no.','art.nr3':'Art. no.','art.nr4':'Art. no.','art.nr5':'Art. no.','art.nr6':'Art. no.','art.nr7':'Art. no.',
+    'art.germ':'germination','art.germ2':'germination','art.germ3':'germination','art.germ4':'germination','art.germ5':'germination','art.germ6':'germination','art.germ7':'germination',
+    'sp.height':'Height','sp.height2':'Height','sp.height3':'Height','sp.height4':'Height',
+    'sp.use':'Use','sp.use2':'Use','sp.use3':'Use','sp.use4':'Use','sp.use5':'Use',
+    'sp.pergram':'Seeds per gram','sp.pergram2':'Seeds per gram','sp.pergram3':'Seeds per gram',
+    'sp.per100':'Seeds per 100 g','sp.per100b':'Seeds per 100 g',
+    'sp.group':'Group','sp.form':'Seed form','sp.fruit':'Fruit','sp.grow':'Cultivation',
+    'v.cutpollen':'Cut flower, pollen-free','v.cutwhite':'Cut flower, pure white','v.cutscent':'Cut flower, strongly scented',
+    'v.rosita':'Rosita, single-flowered','v.cutglass':'Cut flower, glasshouse','v.pelleted':'Pelleted',
+    'v.fruit':'4–8 kg, flat round','v.field':'Open field','v.cutdouble':'Cut flower, double-flowered',
+    'v.ca800':'approx. 800','v.ca450':'approx. 450',
+    'price.from':'From','price.from2':'From','price.from3':'From','price.from4':'From','price.from5':'From','price.from6':'From',
+    'price.per':'per seed, excl. VAT','price.per2':'per seed, excl. VAT','price.per3':'per seed, excl. VAT','price.per4':'per seed, excl. VAT','price.per5':'per seed, excl. VAT','price.per6':'per seed, excl. VAT',
+    'btn.cart':'Add to cart','btn.cart2':'Add to cart','btn.cart3':'Add to cart','btn.cart4':'Add to cart','btn.cart5':'Add to cart','btn.cart6':'Add to cart','btn.cart7':'Add to cart',
+    'grid.empty':'No items found. The real shop lists all 1,412 lots here.',
+    'feat.eyebrow':'Featured · volume pricing','feat.year':'harvest year',
+    'feat.p':'Pollen-free cut sunflower with a firm stem and an even flower head. Choose the quantity; the price per seed drops with the volume.',
+    'unit.seeds1':'seeds','unit.seeds2':'seeds','unit.seeds3':'seeds','unit.ps1':'p/s','unit.ps2':'p/s','unit.ps3':'p/s',
+    'calc.per':'Price per seed','calc.total':'Total excl. VAT',
+    'feat.note':'Delivery 1–2 working days · packed per 1,000 seeds with lot number',
+    'disc.eyebrow':'Order discount','disc.h2':'Extra discount on large quantities',
+    'disc.p':'The discount is calculated automatically in the cart, over the order total excluding VAT and shipping.',
+    'disc.1':'on orders from € 200','disc.2':'on orders from € 400','disc.3':'on orders from € 600',
+    'disc.1b':'no code needed','disc.2b':'incl. carriage paid','disc.3b':'incl. carriage paid',
+    'az.eyebrow':'Search by genus','az.h2':'Seeds A–Z',
+    'az.p':'Growers search by botanical name. This index sits on every page and leads straight to the species page.',
+    'partners':'We work with breeders such as',
+    'about.caption':'Our own propagation field in summer — sample photo',
+    'about.eyebrow':'About us','about.h2':'Flower seed wholesale for three generations',
+    'about.p1':'Worlds Seeds supplies seed to professional growers, nurseries and seed houses across Europe. What began as a trade in sunflower seed at the local auction has grown into a range of more than 1,400 species and cultivars, from cut flower to ornamental grass.',
+    'about.p2':'Every lot arrives in our own warehouse, is tested for germination and purity and gets its own lot number. So with every delivery you know which harvest year goes into the drill.',
+    'about.quote':'“A grower does not buy a packet of seed. He buys a harvest nine weeks from now.”',
+    'about.btn':'Request the 2026 catalogue','about.figures':'In figures',
+    'fig.1':'Species in stock','fig.2':'Countries supplied','fig.3':'Orders per year','fig.4':'Average germination','fig.5':'Own cold storage',
+    'about.note':'Sample figures. The real company data goes here.',
+    'contact.eyebrow':'Contact','contact.h2':'Questions about a lot or a delivery date?',
+    'btn.copy':'Copy','btn.copy2':'Copy',
+    'contact.addr':'Voorbeeldstraat 52 C, 2161 LE Lisse, Netherlands',
+    'contact.hours':'Mon–Fri 08:00–17:00 · orders before 15:00 ship the same day',
+    'contact.note':'All contact details are placeholders.',
+    'form.h3':'Request the 2026 catalogue',
+    'form.note':'Fill in your details and we will send the catalogue and the current price list by post.',
+    'form.name':'Name','form.company':'Company','form.mail':'Email address','form.submit':'Request catalogue',
+    'form.ok':'Thank you. In the real website this request reaches the sales department.',
+    'f.cats':'Product categories','f.service':'Customer service','f.order':'How to order','f.pay':'Payment options',
+    'f.delivery':'Delivery and lead time','f.returns':'Returns','f.terms':'Terms of sale','f.about':'About us',
+    'f.contact':'Contact','f.street':'Voorbeeldstraat 52 C','f.catalog':'Request catalogue',
+    'f.payment':'Secure payment','f.invoice':'On account','f.follow':'Follow us',
+    'cr.summary':'Photo credits',
+    'cr.intro':"Sample photos via Wikimedia Commons, used under their free licence. The real website will show the company's own product photos here.",
+    'f.privacy':'Privacy statement','f.terms2':'Terms of sale','f.webdesign':'Web design: your company name'
+  };
+
+  /* ── Russische vertaling ───────────────────────────── */
+  var RU = {
+    'demo.b':'Демоверсия',
+    'demo.t':'Все тексты, цены и данные компании — образец. Фотографии взяты по свободной лицензии; здесь будут собственные фото товара.',
+    'top.tag':'Оптовая продажа профессиональным производителям · доставка по всему ЕС',
+    'lang.hint':'На настоящем сайте языков будет больше',
+    'top.login':'Войти',
+    'brand.sub':'Оптовая продажа семян цветов',
+    'search.sr':'Поиск товаров',
+    'search.ph':'Поиск по виду, сорту или артикулу',
+    'cart.sr':'Корзина',
+    'nav.new':'Новинки 2026','nav.new2':'Новинки 2026','nav.new3':'Новинки 2026','nav.newtag':'новинка',
+    'cat.flower':'Семена цветов','cat.flower2':'Семена цветов','cat.flower3':'Семена цветов','cat.flower4':'Семена цветов',
+    'cat.plant':'Семена растений','cat.plant2':'Семена растений','cat.plant3':'Семена растений','cat.plant4':'Семена растений',
+    'cat.veg':'Семена овощей','cat.veg2':'Семена овощей','cat.veg3':'Семена овощей','cat.veg4':'Семена овощей',
+    'cat.herb':'Семена трав','cat.herb2':'Семена трав','cat.herb3':'Семена трав','cat.herb4':'Семена трав',
+    'nav.helianthus':'Подсолнечник','nav.helianthus2':'Подсолнечник',
+    'nav.az':'Семена A–Z','nav.az2':'Семена A–Z',
+    'nav.catalog':'Каталог','nav.catalog2':'Заказать каталог',
+    'nav.outlet':'Распродажа','nav.outlet2':'Распродажа',
+    'mb.use':'По назначению','t.cut':'Срезочные цветы','t.dried':'Сухоцветы','t.edible':'Съедобные цветы','t.pot':'Горшечные растения','t.bees':'Пчёлы и бабочки',
+    'mb.genus':'Популярные роды',
+    'mb.form':'Форма семян','t.pelleted':'Дражированные семена','t.naked':'Необработанные семена','t.mix':'Смеси','t.bulk':'Большая фасовка',
+    'mb.season':'Сроки посева','t.spring':'Весенний посев','t.summer':'Летний посев','t.autumn':'Осенний посев','t.year':'Круглый год',
+    'mb.note':'1.412 позиций в этой группе · цены за 1.000 семян, без НДС',
+    'mb.link':'Открыть указатель A–Z →','m.link':'К указателю →','m.link2':'К указателю →',
+    'm.cats':'Категории','m.cats2':'Категории',
+    't.perennial':'Многолетники','t.grass':'Декоративные злаки','t.climb':'Вьющиеся растения','t.straw':'Земляника',
+    'mp.place':'Место посадки','t.sun':'Полное солнце','t.half':'Полутень','t.shade':'Тень',
+    'mp.note':'386 позиций · для каждой указана зона зимостойкости',
+    't.pumpkin':'Тыквы (Cucurbita)','t.tomato':'Томаты','t.leaf':'Листовые культуры','t.root':'Корнеплоды',
+    'mg.grow':'Выращивание','t.field':'Открытый грунт','t.glass':'Теплица','t.organic':'Органические семена',
+    'mg.note':'224 позиции · каждая партия с проверкой всхожести',
+    'hero.eyebrow':'Опт семян цветов, растений и овощей',
+    'hero.h1a':'Семена, на ','hero.h1b':'всхожесть','hero.h1c':' которых можно положиться',
+    'hero.lead':'Более 1.400 видов и сортов с собственного склада, поставка по 1.000 семян с номером партии и проверкой всхожести. Заказ до 15:00 — завтра он уже в пути к вашему хозяйству.',
+    'hero.cta1':'Смотреть ассортимент','hero.cta2':'Наша история',
+    'fact.1':'видов на складе','fact.2':'стран поставки','fact.3':'рабочих дня доставка по ЕС',
+    'usp.1':'Отгрузка прямо со склада','usp.2':'Скидка за объём','usp.3':'Быстрая доставка по ЕС, от € 250 бесплатно',
+    'cats.eyebrow':'Ассортимент','cats.h2':'Несколько категорий из ассортимента','cats.link':'Все категории →',
+    'count.flower':'1.412 позиций','count.veg':'224 позиции','count.herb':'168 позиций','count.plant':'386 позиций',
+    'chips.label':'Часто ищут','chip.1':'Подсолнечник без пыльцы','chip.3':'Лизиантус дражированный','chip.4':'Сухоцветы','chip.6':'Съедобные цветы',
+    'prod.eyebrow':'Популярно у производителей','prod.h2':'Востребованные партии',
+    'prod.p':'Цены за одно семя, без НДС. У каждой партии свой артикул с всхожестью и годом урожая.',
+    'prod.link':'Весь список →','filter.sr':'Фильтр списка','filter.ph':'Фильтр по названию или артикулу',
+    'badge.stock':'В наличии','badge.stock2':'В наличии','badge.stock3':'В наличии','badge.stock4':'В наличии',
+    'badge.new':'Новинка 2026','badge.pelleted':'Дражированные',
+    'art.nr':'Арт.','art.nr2':'Арт.','art.nr3':'Арт.','art.nr4':'Арт.','art.nr5':'Арт.','art.nr6':'Арт.','art.nr7':'Арт.',
+    'art.germ':'всхожесть','art.germ2':'всхожесть','art.germ3':'всхожесть','art.germ4':'всхожесть','art.germ5':'всхожесть','art.germ6':'всхожесть','art.germ7':'всхожесть',
+    'sp.height':'Высота','sp.height2':'Высота','sp.height3':'Высота','sp.height4':'Высота',
+    'sp.use':'Назначение','sp.use2':'Назначение','sp.use3':'Назначение','sp.use4':'Назначение','sp.use5':'Назначение',
+    'sp.pergram':'Семян в грамме','sp.pergram2':'Семян в грамме','sp.pergram3':'Семян в грамме',
+    'sp.per100':'Семян в 100 г','sp.per100b':'Семян в 100 г',
+    'sp.group':'Группа','sp.form':'Форма семян','sp.fruit':'Плод','sp.grow':'Выращивание',
+    'v.cutpollen':'Срезка, без пыльцы','v.cutwhite':'Срезка, чисто белый','v.cutscent':'Срезка, сильный аромат',
+    'v.rosita':'Rosita, простой цветок','v.cutglass':'Срезка, тепличная культура','v.pelleted':'Дражированные',
+    'v.fruit':'4–8 кг, плоскоокруглый','v.field':'Открытый грунт','v.cutdouble':'Срезка, махровый',
+    'v.ca800':'ок. 800','v.ca450':'ок. 450',
+    'price.from':'От','price.from2':'От','price.from3':'От','price.from4':'От','price.from5':'От','price.from6':'От',
+    'price.per':'за семя, без НДС','price.per2':'за семя, без НДС','price.per3':'за семя, без НДС','price.per4':'за семя, без НДС','price.per5':'за семя, без НДС','price.per6':'за семя, без НДС',
+    'btn.cart':'В корзину','btn.cart2':'В корзину','btn.cart3':'В корзину','btn.cart4':'В корзину','btn.cart5':'В корзину','btn.cart6':'В корзину','btn.cart7':'В корзину',
+    'grid.empty':'Ничего не найдено. На настоящем сайте здесь все 1.412 партий.',
+    'feat.eyebrow':'Выбор сезона · цены за объём','feat.year':'год урожая',
+    'feat.p':'Срезочный подсолнечник без пыльцы, крепкий стебель и ровная корзинка. Выберите количество семян: чем больше, тем ниже цена за семя.',
+    'unit.seeds1':'семян','unit.seeds2':'семян','unit.seeds3':'семян','unit.ps1':'за семя','unit.ps2':'за семя','unit.ps3':'за семя',
+    'calc.per':'Цена за семя','calc.total':'Итого без НДС',
+    'feat.note':'Доставка 1–2 рабочих дня · фасовка по 1.000 семян с номером партии',
+    'disc.eyebrow':'Скидка на заказ','disc.h2':'Специальная скидка за большой объём',
+    'disc.p':'Скидка рассчитывается в корзине автоматически от суммы заказа без НДС и доставки.',
+    'disc.1':'при заказе от € 200','disc.2':'при заказе от € 400','disc.3':'при заказе от € 600',
+    'disc.1b':'код не нужен','disc.2b':'включая бесплатную доставку','disc.3b':'включая бесплатную доставку',
+    'az.eyebrow':'Поиск по роду','az.h2':'Семена A–Z',
+    'az.p':'Производители ищут по ботаническому названию. Этот указатель есть на каждой странице и ведёт прямо к нужному виду.',
+    'partners':'Мы работаем с такими селекционерами, как',
+    'about.caption':'Собственное маточное поле летом — пример фото',
+    'about.eyebrow':'О нас','about.h2':'Опт семян цветов уже три поколения',
+    'about.p1':'Worlds Seeds поставляет семена профессиональным производителям, питомникам и семенным компаниям Европы. То, что начиналось как торговля семенами подсолнечника на местном аукционе, выросло в ассортимент из более чем 1.400 видов и сортов — от срезочных цветов до декоративных злаков.',
+    'about.p2':'Все партии поступают на наш склад, проверяются на всхожесть и чистоту и получают собственный номер. Поэтому при каждой поставке вы знаете, урожай какого года идёт в сеялку.',
+    'about.quote':'«Производитель покупает не пакетик семян. Он покупает урожай через девять недель.»',
+    'about.btn':'Заказать каталог 2026','about.figures':'В цифрах',
+    'fig.1':'Видов на складе','fig.2':'Стран поставки','fig.3':'Заказов в год','fig.4':'Средняя всхожесть','fig.5':'Собственный холодный склад',
+    'about.note':'Цифры условные. Здесь будут настоящие данные компании.',
+    'contact.eyebrow':'Контакты','contact.h2':'Вопрос о партии или сроке поставки?',
+    'btn.copy':'Копировать','btn.copy2':'Копировать',
+    'contact.addr':'Voorbeeldstraat 52 C, 2161 LE Lisse, Нидерланды',
+    'contact.hours':'Пн–пт 08:00–17:00 · заказы до 15:00 уходят в тот же день',
+    'contact.note':'Все контактные данные условные.',
+    'form.h3':'Заказать каталог 2026',
+    'form.note':'Оставьте свои данные — каталог и актуальный прайс-лист отправим почтой.',
+    'form.name':'Имя','form.company':'Компания','form.mail':'Электронная почта','form.submit':'Заказать каталог',
+    'form.ok':'Спасибо. На настоящем сайте эта заявка попадает в отдел продаж.',
+    'f.cats':'Категории товаров','f.service':'Обслуживание клиентов','f.order':'Порядок заказа','f.pay':'Способы оплаты',
+    'f.delivery':'Доставка и сроки','f.returns':'Возврат','f.terms':'Условия продажи','f.about':'О нас',
+    'f.contact':'Контакты','f.street':'Voorbeeldstraat 52 C','f.catalog':'Заказать каталог',
+    'f.payment':'Безопасная оплата','f.invoice':'По счёту','f.follow':'Мы в соцсетях',
+    'cr.summary':'Источники фотографий',
+    'cr.intro':'Примеры фотографий — Wikimedia Commons, по свободной лицензии. На настоящем сайте здесь будут собственные фото товара.',
+    'f.privacy':'Политика конфиденциальности','f.terms2':'Условия продажи','f.webdesign':'Веб-дизайн: название вашей компании'
+  };
+
+  var DICT = { hy: HY, en: EN, ru: RU };
+  var LANGNAMES = { nl:'Nederlands', en:'English', hy:'Հայերեն', ru:'Русский' };
+
   var STR = {
     nl:{
       items:function(n){ return n + (n === 1 ? ' artikel' : ' artikelen'); },
@@ -1041,6 +1246,26 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
       selected:'Ընտրված է — պատճենեք Ctrl+C-ով։',
       azEmpty:function(ch){ return '«' + ch + '» տառով տեսակներ այս նմուշում դեռ չկան։'; },
       langSet:'Կայքն այժմ հայերեն է։'
+    },
+    en:{
+      items:function(n){ return n + (n === 1 ? ' item' : ' items'); },
+      added:function(name, qty, amount){ return 'Added: ' + name + ' · ' + qty + ' seeds · ' + amount; },
+      cartEmpty:'Your cart is still empty.',
+      cartSome:function(n, total){ return n + ' line(s) in the cart · ' + total + ' excl. VAT'; },
+      copied:function(t){ return 'Copied: ' + t; },
+      selected:'Selected — copy with Ctrl+C.',
+      azEmpty:function(ch){ return 'No genera under ' + ch + ' in this sample yet.'; },
+      langSet:'The website is now in English.'
+    },
+    ru:{
+      items:function(n){ return n + ' поз.'; },
+      added:function(name, qty, amount){ return 'Добавлено: ' + name + ' · ' + qty + ' семян · ' + amount; },
+      cartEmpty:'Ваша корзина пока пуста.',
+      cartSome:function(n, total){ return 'Строк в корзине: ' + n + ' · ' + total + ' без НДС'; },
+      copied:function(t){ return 'Скопировано: ' + t; },
+      selected:'Выделено — скопируйте с Ctrl+C.',
+      azEmpty:function(ch){ return 'На букву ' + ch + ' в этом примере видов пока нет.'; },
+      langSet:'Сайт переключён на русский.'
     }
   };
 
@@ -1055,17 +1280,18 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
   });
 
   function setLang(next){
-    lang = next === 'hy' ? 'hy' : 'nl';
+    lang = (next === 'nl' || DICT[next]) ? next : 'nl';
+    var d = DICT[lang] || null;
     originals.forEach(function(nlText, el){
       var key = el.getAttribute('data-i18n');
-      el.textContent = (lang === 'hy' && HY[key]) ? HY[key] : nlText;
+      el.textContent = (d && typeof d[key] === 'string') ? d[key] : nlText;
     });
     originalPh.forEach(function(nlPh, el){
       var key = el.getAttribute('data-i18n-ph');
-      el.setAttribute('placeholder', (lang === 'hy' && HY[key]) ? HY[key] : nlPh);
+      el.setAttribute('placeholder', (d && typeof d[key] === 'string') ? d[key] : nlPh);
     });
     document.documentElement.lang = lang;
-    document.getElementById('lang-label').textContent = lang === 'hy' ? 'Հայերեն' : 'Nederlands';
+    document.getElementById('lang-label').textContent = LANGNAMES[lang] || 'Nederlands';
     Array.prototype.forEach.call(langMenu.querySelectorAll('button[data-lang]'), function(b){
       b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
@@ -1079,7 +1305,7 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
   function euro(n){ return '€' + nbsp + n.toLocaleString('nl-NL',{minimumFractionDigits:2,maximumFractionDigits:2}); }
   function euroSeed(n){ return '€' + nbsp + n.toLocaleString('nl-NL',{minimumFractionDigits:3,maximumFractionDigits:3}); }
   function num(n){ return n.toLocaleString('nl-NL'); }
-  function t(){ return STR[lang]; }
+  function t(){ return STR[lang] || STR.nl; }
 
   var toastEl = null, toastTimer = null;
   function toast(msg){
@@ -1304,6 +1530,6 @@ footer .pay span{border:1px solid rgba(255,255,255,.25);border-radius:2px;paddin
   /* ── taalkeuze onthouden ───────────────────────────── */
   var saved = null;
   try{ saved = localStorage.getItem('ws-lang'); }catch(err){}
-  if(saved === 'hy'){ setLang('hy'); } else { document.documentElement.lang = 'nl'; }
+  if(saved && saved !== 'nl' && DICT[saved]){ setLang(saved); } else { document.documentElement.lang = 'nl'; }
 })();
 </script>

@@ -20,7 +20,7 @@ Geen build-stap, geen dependencies. Dubbelklik `index.html` om hem lokaal te bek
 - Staffelcalculator: 1.000 / 5.000 / 10.000 zaden → prijs per zaad en ordertotaal
 - Winkelwagen telt regels en bedrag op
 - Uitklapmenu's, mobiel menu, A–Z index, catalogusformulier, kopieerknoppen
-- Taalkeuze Nederlands ↔ Armeens (Հայերեն); de keuze wordt onthouden in de browser
+- Taalkeuze Nederlands, Engels, Armeens (Հայերեն) en Russisch; de keuze wordt onthouden in de browser
 
 ## Nog te vervangen voor oplevering
 
@@ -34,7 +34,7 @@ Geen build-stap, geen dependencies. Dubbelklik `index.html` om hem lokaal te bek
 Een los voorbeeld in een heel ander genre en een heel andere vormgeving: **Clos & Kelder**, een
 verzonnen Belgische wijnhandel, in de lijn van [vineo.be](https://www.vineo.be/). Donkere
 uitstraling, webshop met kleurfilter, spijs-en-wijnkiezer, proeverijen met reservering,
-cadeaubon en een taalkeuze Nederlands ↔ Frans. Zelfde opzet: één `index.html` plus een map `img/`.
+cadeaubon en een taalkeuze Nederlands, Frans, Engels en Russisch. Zelfde opzet: één `index.html` plus een map `img/`.
 
 Via GitHub Pages komt dit voorbeeld op `/wijnhandel-demo/` te staan. Wil je er een losse site van
 maken, verplaats de map dan naar een eigen repo.
@@ -42,5 +42,5 @@ maken, verplaats de map dan naar een eigen repo.
 ## Aanpassen
 
 Kleuren, lettertypen en afrondingen staan als tokens bovenaan het `:root`-blok in `index.html`.
-De Armeense vertalingen staan in het object `HY` onderin het script; elke tekst met een
+De vertalingen staan in de objecten `EN`, `HY` en `RU` onderin het script; elke tekst met een
 `data-i18n`-attribuut in de HTML heeft daar een regel.
