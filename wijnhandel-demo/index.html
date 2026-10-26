@@ -33,8 +33,8 @@ p{margin:0}
 a{color:inherit}
 .wrap{width:100%;max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .band{width:100%}
-.label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--gold)}
-.label-q{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.label{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.label-q{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--cream-2)}
 .lead{font-size:1.08rem;color:var(--cream-2);max-width:54ch}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -57,12 +57,12 @@ a{color:inherit}
 
 /* topbalk */
 .topbar{background:var(--ink-2);border-bottom:1px solid var(--line)}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.5rem;font-size:.76rem;color:var(--cream-2);flex-wrap:wrap}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.6rem;font-size:.92rem;color:var(--cream-2);flex-wrap:wrap}
 .topbar a{text-decoration:none}
 .topbar a:hover{color:var(--gold)}
 .topbar-right{display:flex;align-items:center;gap:1.2rem}
 .lang{position:relative}
-.lang-btn{background:none;border:0;color:inherit;font:inherit;font-size:.76rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;letter-spacing:.1em;text-transform:uppercase}
+.lang-btn{background:none;border:0;color:inherit;font:inherit;font-size:.92rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;letter-spacing:.08em;text-transform:uppercase}
 .lang-btn:hover{color:var(--gold)}
 .lang-menu{position:absolute;right:0;top:calc(100% + .5rem);background:var(--ink-3);border:1px solid var(--line);min-width:11rem;padding:.3rem;z-index:35;box-shadow:0 18px 40px rgba(0,0,0,.5)}
 .lang-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--cream);padding:.45rem .6rem;font-size:.85rem;cursor:pointer}
@@ -78,10 +78,10 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgrou
 .brand{text-align:center;text-decoration:none;display:grid;gap:.3rem;justify-items:center}
 .brand .name{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:.06em;line-height:1}
 .brand .name .amp{color:var(--gold);font-style:italic}
-.brand .sub{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-.icon-btn{background:none;border:0;color:var(--cream-2);cursor:pointer;padding:.3rem;display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.76rem}
+.brand .sub{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-2)}
+.icon-btn{background:none;border:0;color:var(--cream);cursor:pointer;padding:.45rem .3rem;display:inline-flex;align-items:center;gap:.45rem;font:inherit;font-size:.92rem}
 .icon-btn:hover{color:var(--gold)}
-.cart-count{background:var(--claret);color:#FDF8F3;border-radius:999px;font-size:.66rem;font-weight:700;min-width:1.2rem;height:1.2rem;display:grid;place-items:center;padding:0 .3rem}
+.cart-count{background:var(--claret);color:#FDF8F3;border-radius:999px;font-size:.76rem;font-weight:700;min-width:1.45rem;height:1.45rem;display:grid;place-items:center;padding:0 .35rem}
 .searchbar{border-top:1px solid var(--line);display:none}
 .searchbar.open{display:block}
 .searchbar .wrap{display:flex;align-items:center;gap:.6rem;padding-block:.7rem}
@@ -93,18 +93,18 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgrou
 .nav{border-top:1px solid var(--line);position:relative}
 .nav-row{display:flex;justify-content:center;gap:.2rem;overflow-x:auto;scrollbar-width:thin}
 .nav-row > *{flex:0 0 auto}
-.nav-link{background:none;border:0;color:var(--cream);font:inherit;font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;padding:.85rem .9rem;cursor:pointer;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:.35rem;border-bottom:1px solid transparent}
+.nav-link{background:none;border:0;color:var(--cream);font:inherit;font-size:.88rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.05rem;cursor:pointer;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:.4rem;border-bottom:1px solid transparent}
 .nav-link:hover,.nav-link[aria-expanded="true"]{color:var(--gold);border-bottom-color:var(--gold)}
 .mega{position:absolute;left:0;right:0;top:100%;background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);z-index:28;box-shadow:0 24px 50px rgba(0,0,0,.55)}
 .mega .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.4rem 2rem;padding-block:1.6rem}
-.mega h4{font-family:var(--font-body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 .7rem}
-.mega ul{list-style:none;margin:0;padding:0;display:grid;gap:.42rem}
-.mega a{font-size:.92rem;text-decoration:none;color:var(--cream-2)}
+.mega h4{font-family:var(--font-body);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 .7rem}
+.mega ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.mega a{font-size:.98rem;text-decoration:none;color:var(--cream-2)}
 .mega a:hover{color:var(--cream)}
 .mega-note{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1rem;font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .mobile-nav{display:none;border-top:1px solid var(--line)}
 .mobile-nav ul{list-style:none;margin:0;padding:.4rem 0;display:grid}
-.mobile-nav a{display:block;padding:.65rem max(16px,env(safe-area-inset-left,0px));text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.mobile-nav a{display:block;padding:.65rem max(16px,env(safe-area-inset-left,0px));text-decoration:none;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase}
 .mobile-nav a:hover{background:var(--ink-2);color:var(--gold)}
 
 /* hero */
@@ -339,7 +339,7 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
     <div class="masthead">
       <div class="mast-left">
         <button class="icon-btn" id="search-btn" aria-expanded="false" aria-controls="searchbar">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
           <span class="lbl" data-i18n="ui.search">Zoeken</span>
         </button>
       </div>
@@ -349,10 +349,10 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
       </a>
       <div class="mast-right">
         <button class="icon-btn" id="burger" aria-expanded="false" aria-controls="mobile-nav" style="display:none">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
         <button class="icon-btn" id="cart-btn">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h14l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8Z"/><path d="M8.5 7V5.5a2.5 2.5 0 0 1 5 0V7"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h14l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8Z"/><path d="M8.5 7V5.5a2.5 2.5 0 0 1 5 0V7"/></svg>
           <span class="cart-count" id="cart-count">0</span>
           <span class="lbl num" id="cart-total">&euro;&nbsp;0,00</span>
         </button>
@@ -361,7 +361,7 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
   </div>
   <div class="searchbar" id="searchbar">
     <div class="wrap">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="color:var(--gold)"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="color:var(--gold)"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
       <label class="sr" for="q" data-i18n="ui.searchLabel">Zoek een wijn</label>
       <input type="text" id="q" data-i18n-ph="ui.searchPh" placeholder="Zoek op domein, appellatie of druif" autocomplete="off">
       <button class="btn btn-line btn-sm" id="q-clear" data-i18n="ui.clear">Wissen</button>
@@ -444,15 +444,15 @@ footer .fbrand p{font-size:.86rem;color:var(--muted);margin-top:.5rem;max-width:
 <div class="band usp">
   <div class="wrap">
     <div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5c0 3-2 4-2 7H9c0-3-2-4-2-7a5 5 0 0 1 5-5Z"/><path d="M9.5 19h5"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5c0 3-2 4-2 7H9c0-3-2-4-2-7a5 5 0 0 1 5-5Z"/><path d="M9.5 19h5"/></svg>
       <span data-i18n="usp.1">Persoonlijk advies in de winkel</span>
     </div>
     <div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg>
       <span data-i18n="usp.2">Gratis levering vanaf &euro; 150</span>
     </div>
     <div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0Z"/><path d="M12 14v7M8.5 21h7"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0Z"/><path d="M12 14v7M8.5 21h7"/></svg>
       <span data-i18n="usp.3">Proeverij elke laatste vrijdag</span>
     </div>
   </div>
