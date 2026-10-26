@@ -9,7 +9,8 @@ Bedoeld om aan de klant te laten zien, nog niet om live te gaan.
 
 ## Bestanden
 
-- `index.html` — de volledige pagina (HTML, CSS en JS in één bestand)
+- `index.html` — de volledige pagina (HTML, CSS en JS in één bestand, een volwaardig
+  HTML-document met eigen `<head>` en viewport-regel)
 - `img/` — 15 foto's
 
 Geen build-stap, geen dependencies. Dubbelklik `index.html` om hem lokaal te bekijken.
